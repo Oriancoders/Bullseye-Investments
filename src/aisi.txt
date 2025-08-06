@@ -1,0 +1,118 @@
+Design a modern, clean, and highly professional homepage UI for a financial services company called Bullseye Investments Private Limited.
+
+Theme: Black & White (monochrome)
+
+Typography:
+Headings: DM Serif Display or Playfair Display
+Body Text: Inter or Work Sans
+
+Design Style:
+Institutional, minimal, premium
+Clean layout, strong typography
+Subtle animations, soft transitions
+Focused on trust, clarity, and conversion
+
+🔖 Sections to Include:
+Navigation Bar (Sticky on Scroll)
+
+Logo (top left)
+
+Menu: Home, About Us, Services, Education, Markets, MetaTrader, FAQ, Contact Us
+Highlighted CTA Button: “Open Account” (right-aligned)
+
+Hero Section
+Large impactful headline (e.g., “Diversified Financial Services with Global Vision”)
+Short subheading: Mention SECP registration and credibility
+Two prominent buttons: “Explore Services” and “Open Account”
+Background: Black & white abstract finance-inspired gradient or market-related image showing trends
+
+==============================================================
+About Bullseye (Quick Overview)
+2–3 line summary of the company
+Grid of credential badges/icons (SECP, PMEX, PSX, etc.) each is represented with heading and small explanation with image
+Button: “Learn More About Us”
+
+==============================================================
+Services Overview
+Customized layout showing 5 services with icons and short description:
+22/5 Trading Analysts Support 
+Training before Trading:
+Free Online Account Opening
+Informative Webinars/Seminars
+Daily Market Updates
+Premier Client Solutions
+
+Button: “View All Services”
+==============================================================
+Why Choose Bullseye (Trust Section)
+Heading: “Why Investors Trust Us”
+Bullet points or icon blocks with delay animation like fade up one by one visually appealing:
+
+🧱 Key Points (based on your inputs):
+22/5 Trading Analysts Support
+Get expert trading guidance from real analysts — five days a week, nearly round the clock. You're never alone in the market.
+
+Training Before Trading
+New to trading? Our onboarding includes educational resources and strategy insights so you can begin with confidence.
+
+Free Online Account Opening
+Open your trading account easily — no hidden fees, no paperwork delays. It’s fast, secure, and 100% online.
+
+Informative Webinars & Seminars
+Learn from industry experts with regular live sessions covering market trends, risk management, and smart investing.
+
+Daily Market Updates
+Stay ahead with timely insights, technical breakdowns, and key financial news — delivered daily by our research desk.
+
+Premier Client Solutions
+Get access to customized tools, priority support, and exclusive features tailored for serious investors.
+
+==============================================================
+Markets Snapshot Section
+Display 3 market types (PSX, PMEX, Forex) in card format , this should be animated showing random range of data for now later will be fetched real data from api
+Each card: small icon, market name, and placeholder for simulated live data or summary
+Button: “Explore Markets”
+
+==============================================================
+Education Teaser Section
+Heading: “New to Trading?”
+2-line summary about learning basics of PSX, PMEX, Forex 
+Button: “Learn Market Basics”
+
+==============================================================
+Open Account Section
+
+Visual step layout in proper animation like a roadmap scroll based animations using framer motion:
+
+Step 1: Choose market
+Step 2: Fill form
+Step 3: Redirect to PSX/PMEX portal
+CTA Button: “Open Account”
+
+
+==============================================================
+MetaTrader Download Section
+MetaTrader 4/5 logos + device icons (Windows, Mac, Mobile)
+One-line benefit: “Start trading with real platforms instantly”
+Button: “Download MetaTrader”
+
+Contact Teaser Section (Before Footer)
+Short question: “Still have questions?”
+CTA Button: “Contact Us” 
+text on left and a proper image a guy in call center using headphones 
+==============================================================
+Footer
+
+Company logo
+
+Quick Links: Home, Services, About Us, FAQ, Legal
+
+Contact info: Address, Email, Phone
+
+Social media icons (LinkedIn, Facebook, WhatsApp)
+
+Legal: Privacy Policy, Risk Disclosure
+
+© Bullseye Investments 2025. All rights reserved.
+
+use images from google for now 
