@@ -42,7 +42,7 @@ const Services = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Our Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl  max-w-3xl mx-auto">
             Comprehensive financial solutions tailored to your investment goals and risk profile
           </p>
         </div>
@@ -54,7 +54,7 @@ const Services = () => {
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <p className=" leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>

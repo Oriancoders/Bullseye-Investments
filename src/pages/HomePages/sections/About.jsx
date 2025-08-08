@@ -39,7 +39,7 @@ const About = () => {
                 <cred.icon className="w-8 h-8 text-white" />
               </div>
               <div className="font-bold text-black text-lg">{cred.label}</div>
-              <div className="text-gray-600 text-sm">{cred.desc}</div>
+              <div className="">{cred.desc}</div>
             </div>
           ))}
         </div>

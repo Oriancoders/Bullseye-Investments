@@ -5,6 +5,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEducationOpenMobile, setIsEducationOpenMobile] = useState(false);
+  const [activePage, setActivePage] = useState('#home'); // new state for active link
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +17,20 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about-us' },
-    { label: 'Services', href: '#services' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/About' },
+    { label: 'Services', href: '/Services' },
     { 
       label: 'Education', 
       href: '#education', 
       submenu: [
-        { label: 'Markets', href: '#markets' },
-        { label: 'MetaTrader', href: '#metatrader' },
-        { label: 'Blogs', href: '#blogs' },
+        { label: 'Markets', href: '/' },
+        { label: 'MetaTrader', href: '/' },
+        { label: 'Blogs', href: '/' },
       ]
     },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contact Us', href: '#contact-us' }
+    { label: 'FAQ', href: '/' },
+    { label: 'Contact Us', href: '/' }
   ];
 
   return (
@@ -51,8 +52,18 @@ const Navigation = () => {
               <div key={item.label} className="relative group">
                 {!item.submenu ? (
                   <a
-                    href={item.href}
-                    className={`${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white'} transition-colors duration-200 font-medium`}
+                    href={`http://localhost:5173${item.href}`}
+                    onClick={() => setActivePage(item.href)}
+                    className={`
+                      transition-colors duration-200 font-medium relative 
+                      after:content-[''] after:absolute after:left-0 after:-bottom-1 
+                      after:w-full after:h-[2px] 
+                      after:transition-all after:duration-300 
+                      ${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:text-white'} 
+                      ${activePage === item.href 
+                        ? 'after:bg-current after:opacity-100' 
+                        : 'after:bg-current after:opacity-0 group-hover:after:opacity-100'}
+                    `}
                   >
                     {item.label}
                   </a>
@@ -60,7 +71,7 @@ const Navigation = () => {
                   <>
                     {/* Parent menu item */}
                     <button
-                      className={`${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white '} flex items-center gap-1 font-medium`}
+                      className={`${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white'} flex items-center gap-1 font-medium`}
                     >
                       {item.label} <ChevronDown className="w-4 h-4" />
                     </button>
@@ -72,6 +83,7 @@ const Navigation = () => {
                           <a
                             key={subItem.label}
                             href={subItem.href}
+                            onClick={() => setActivePage(subItem.href)}
                             className="px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
                           >
                             {subItem.label}
@@ -115,8 +127,11 @@ const Navigation = () => {
                   <a
                     key={item.label}
                     href={item.href}
+                    onClick={() => {
+                      setActivePage(item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                     className="text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100"
-                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </a>
@@ -142,8 +157,11 @@ const Navigation = () => {
                           <a
                             key={subItem.label}
                             href={subItem.href}
+                            onClick={() => {
+                              setActivePage(subItem.href);
+                              setIsMobileMenuOpen(false);
+                            }}
                             className="text-gray-600 hover:text-black py-2 border-b border-gray-100"
-                            onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {subItem.label}
                           </a>

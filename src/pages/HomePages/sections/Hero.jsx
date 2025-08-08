@@ -1,6 +1,8 @@
 import React from 'react';
 import { TrendingUp, Shield } from 'lucide-react';
-import heroBG from '../assets/heroBG.jpg'
+import heroBG from '../../..//assets/heroBG.jpg'
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../../../utils/animations';
 
 const Hero = () => {
   return (
@@ -26,10 +28,12 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+          <motion.div
+          variants={fadeInUp}
+          className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
             <Shield className="w-4 h-4 text-white mr-2" />
             <span className="text-white text-sm font-medium ">SECP Licensed & PMEX Active</span>
-          </div>
+          </motion.div>
 
           {/* Main Headline */}
           <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">

@@ -3,7 +3,7 @@ import { BarChart3, BookOpen, TrendingUp, Users } from 'lucide-react';
 
 const Education = () => {
   return (
-    <section className="py-20 bg-gray-50 text-black">
+    <section className="py-20 bg-gradient-to-tr from-gray-400 via-white to-white text-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-8">

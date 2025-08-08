@@ -29,7 +29,7 @@ const WhyChoose = () => {
     <section className="py-20 bg-gradient-to-br from-black  via-black to-black/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif text-white mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Why Investors Trust Us
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ const WhyChoose = () => {
                 <feature.icon className="w-10 h-10 text-black" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+              <p className="text-gray-200 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

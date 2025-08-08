@@ -9,19 +9,37 @@ const MetaTrader = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black relative">
+      <span style={{
+                width: 1000,
+                height: 1000,
+                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0.01))`,
+                filter: "blur(10px)",
+                pointerEvents: "none",
+              }}
+              className="absolute rounded-full -left-1/2 -top-1/2"/>
+
+        <span style={{
+                width: 1000,
+                height: 1000,
+                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0.01))`,
+                filter: "blur(10px)",
+                pointerEvents: "none",
+              }}
+              className="absolute rounded-full -right-1/2 -bottom-1/2"/>
+     
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center items-center mb-8">
             <div className="text-4xl font-bold text-white mr-4">MetaTrader</div>
-            <div className="text-2xl text-gray-400">4 & 5</div>
+            <div className="text-2xl text-white">4 & 5</div>
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-serif text-white mb-6">
             Professional Trading Platform
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-12">
             Start trading instantly with industry-standard MetaTrader platforms. 
             Advanced charting, automated trading, and real-time market data at your fingertips.
           </p>
@@ -34,7 +52,7 @@ const MetaTrader = () => {
                 <platform.icon className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{platform.name}</h3>
-              <p className="text-gray-400">{platform.desc}</p>
+              <p className="text-gray-100 text-lg">{platform.desc}</p>
             </div>
           ))}
         </div>
