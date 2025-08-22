@@ -35,7 +35,7 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {credentials.map((cred, index) => (
             <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-800 transition-colors">
+              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-colors">
                 <cred.icon className="w-8 h-8 text-white" />
               </div>
               <div className="font-bold text-black text-lg">{cred.label}</div>

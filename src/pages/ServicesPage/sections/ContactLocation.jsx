@@ -30,7 +30,7 @@ const ContactLocation = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Contact & Location
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -46,7 +46,7 @@ const ContactLocation = () => {
             {contactMethods.map((method, index) => (
               <div key={index} className="group bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                 <div className="flex items-center">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   
@@ -56,7 +56,7 @@ const ContactLocation = () => {
                   </div>
                   
                   {/* Optimized for Fitts's Law - Large clickable area */}
-                  <button className={`bg-gradient-to-r ${method.color} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[120px]`}>
+                  <button className={`bg-gradient-to-r from-black to-black/90  text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[120px]`}>
                     {method.action}
                   </button>
                 </div>

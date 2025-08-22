@@ -10,7 +10,7 @@ const Education = () => {
             <BookOpen className="w-10 h-10 text-white" />
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold   mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             New to Trading?
           </h2>
           

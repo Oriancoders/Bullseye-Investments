@@ -45,7 +45,7 @@ const OpenAccount = () => {
                 </div>
                 
                 {/* Icon */}
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-black hover:text-white transition-all duration-300 group">
+                <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-black hover:text-white transition-all duration-300 group">
                   <step.icon className="w-10 h-10 text-black group-hover:text-white transition-colors" />
                 </div>
                 

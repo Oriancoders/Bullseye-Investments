@@ -24,9 +24,8 @@ const Navigation = () => {
       label: 'Education', 
       href: '#education', 
       submenu: [
-        { label: 'Markets', href: '/' },
-        { label: 'MetaTrader', href: '/' },
-        { label: 'Blogs', href: '/' },
+        { label: 'Markets', href: '/Market' },
+        { label: 'MetaTrader', href: '/MetaTrader' },
       ]
     },
     { label: 'FAQ', href: '/' },
@@ -96,13 +95,12 @@ const Navigation = () => {
               </div>
             ))}
           </div>
-
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-x-6">
-            <button className="bg-green-600 hover:bg-green-800  text-white px-6 py-2 font-semibold  transition-all duration-200 transform rounded-sm">
+            <button className="bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition-all duration-200 transform rounded-sm">
               Call Now
             </button>
-            <button className="bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition-all duration-200 transform rounded-sm">
+            <button className="bg-green-600 hover:bg-green-800  text-white px-6 py-2 font-semibold  transition-all duration-200 transform rounded-sm">
               Open Account
             </button>
           </div>

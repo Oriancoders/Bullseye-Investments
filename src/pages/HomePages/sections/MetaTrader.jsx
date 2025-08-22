@@ -13,7 +13,7 @@ const MetaTrader = () => {
       <span style={{
                 width: 1000,
                 height: 1000,
-                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0.01))`,
+                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0))`,
                 filter: "blur(10px)",
                 pointerEvents: "none",
               }}
@@ -22,7 +22,7 @@ const MetaTrader = () => {
         <span style={{
                 width: 1000,
                 height: 1000,
-                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0.01))`,
+                background: `radial-gradient(circle at center, rgba(255,255,255,0.2), rgba(255,255,255,0))`,
                 filter: "blur(10px)",
                 pointerEvents: "none",
               }}
@@ -30,14 +30,8 @@ const MetaTrader = () => {
      
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="flex justify-center items-center mb-8">
-            <div className="text-4xl font-bold text-white mr-4">MetaTrader</div>
-            <div className="text-2xl text-white">4 & 5</div>
-          </div>
-          
-          <h2 className="text-3xl lg:text-4xl font-serif text-white mb-6">
-            Professional Trading Platform
-          </h2>
+          <div className="text-4xl lg:text-5xl font-bold text-white mb-6">MetaTrader 4 & 5</div>
+
           
           <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-12">
             Start trading instantly with industry-standard MetaTrader platforms. 
@@ -47,7 +41,7 @@ const MetaTrader = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {platforms.map((platform, index) => (
-            <div key={index} className="text-center p-8 border border-gray-700 hover:border-white transition-all duration-300 group">
+            <div key={index} className="text-center p-8 border border-white hover:border-gray-900 transition-all duration-300 group">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-100 transition-colors">
                 <platform.icon className="w-8 h-8 text-black" />
               </div>

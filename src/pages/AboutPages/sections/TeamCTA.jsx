@@ -1,38 +1,59 @@
 import React from 'react';
 import { Users, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const TeamCTA = () => {
   const team = [
     {
-      name: 'Muhammad Ahmed',
-      role: 'Chief Executive Officer',
-      bio: 'Leading with 25+ years of international financial markets experience',
+      name: 'Mr. Naveed Ishaque',
+      role: 'Chief Executive Officer (CEO)',
       image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
-      name: 'Sarah Khan',
-      role: 'Head of Compliance',
-      bio: 'Ensuring regulatory excellence and client protection standards',
+      name: 'Mr. Sajid Ahmed Qureshi',
+      role: 'Managing Director',
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
-      name: 'Ali Hassan',
-      role: 'Trading Director',
-      bio: 'Expert in commodities and forex markets with proven track record',
+      name: 'Mr. Unwan Abbas',
+      role: 'Head of Operations',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
-      name: 'Fatima Sheikh',
-      role: 'Client Relations Manager',
-      bio: 'Dedicated to exceptional client service and relationship management',
+      name: 'Mr. Farjad Abbas',
+      role: 'Head of Marketing and Sales',
       image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
   ];
 
+  const directors = [
+  {
+    name: "Ms. Fainaana Farnaam",
+    role: "Chairperson",
+    profile: "Chairperson and Sponsor Director",
+      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400'
+
+  },
+  {
+    name: "Mr. Naveed Ishaque",
+    role: "Director",
+    profile: "CEO / Director",
+      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400'
+
+  },
+  {
+    name: "Mr. Sajeel",
+    role: "Director",
+    profile: "Director",
+      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400'
+
+  },
+];
+
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section className="pt-10 sm:pb-10 bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8">
             <Users className="w-10 h-10 text-black" />
           </div>
@@ -44,7 +65,7 @@ const TeamCTA = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {team.map((member, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-6 overflow-hidden rounded-lg">
@@ -57,14 +78,51 @@ const TeamCTA = () => {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
               <div className="text-gray-100 font-medium mb-3">{member.role}</div>
-              <p className="text-gray-100 text-sm leading-relaxed">{member.bio}</p>
             </div>
           ))}
         </div>
 
-        {/* CTA Section */}
+        
+      </div>
+          <hr className='my-10 text-white  mx-10'/>
+
+      <div className="max-w-5xl mx-auto px-6 my-6">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl lg:text-5xl font-bold text-white mb-6 text-center"
+        >
+          Board of Directors
+        </motion.h2>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+
+          {directors.map((director, index) => (
+            <div key={index} className="text-center group">
+              <div className="relative mb-6 overflow-hidden rounded-lg">
+                <img 
+                  src={director.image} 
+                  alt={director.name}
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">{director.name}</h3>
+              <div className="text-gray-100 font-medium mb-3">{director.profile}</div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 border border-white/20 max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm sm:rounded-2xl p-12 border border-white/20 max-w-4xl mx-auto">
             <h3 className="text-3xl font-serif text-white mb-6">
               Ready to Start Your Investment Journey?
             </h3>
@@ -77,7 +135,6 @@ const TeamCTA = () => {
             </button>
           </div>
         </div>
-      </div>
     </section>
   );
 };

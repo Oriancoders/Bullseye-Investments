@@ -36,10 +36,10 @@ const TrustCompliance = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Trust & Compliance
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
             Our regulatory credentials and licensing ensure your investments are protected 
             and managed according to the highest industry standards.
           </p>
@@ -54,20 +54,20 @@ const TrustCompliance = () => {
               </div>
               
               <h3 className="text-2xl font-bold text-black mb-2">{credential.name}</h3>
-              <div className="text-sm text-gray-600 mb-3">{credential.fullName}</div>
+              <div className="text-sm text-gray-900 mb-3">{credential.fullName}</div>
               
               <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
                 {credential.status}
               </div>
               
-              <p className="text-gray-600 text-sm leading-relaxed">{credential.description}</p>
+              <p className="text-gray-900 text-sm leading-relaxed">{credential.description}</p>
             </div>
           ))}
         </div>
 
         {/* Additional Trust Elements */}
         <div className="bg-white rounded-2xl shadow-xl p-12 text-center border border-gray-200">
-          <h3 className="text-3xl font-serif text-black mb-6">Your Security is Our Priority</h3>
+          <h3 className="text-3xl font-bold text-black mb-6">Your Security is Our Priority</h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             We maintain the highest standards of regulatory compliance, data security, and client fund protection. 
             Your investments are safeguarded by industry-leading security measures and regulatory oversight.

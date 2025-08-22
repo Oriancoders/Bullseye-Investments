@@ -54,8 +54,8 @@ const Markets = () => {
           {markets.map((market, index) => (
             <div key={index} className="bg-gray-gra p-8 hover:shadow-xl transition-all duration-300 group hover:transform hover:-translate-y-2 border-4 rounded-md bg-white">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4 group-hover:bg-gray-800 transition-colors">
-                  <market.icon className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mr-4 group-hover:bg-gray-800 transition-colors">
+                  <market.icon className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-black">{market.name}</div>

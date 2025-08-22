@@ -28,7 +28,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <a key={index} href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-200">
+                <a key={index} href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black transition-all duration-200">
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}

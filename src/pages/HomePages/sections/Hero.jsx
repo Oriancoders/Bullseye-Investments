@@ -26,7 +26,7 @@ const Hero = () => {
       ></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
-        <div className="text-center">
+        <div className="sm:text-center">
           {/* Badge */}
           <motion.div
           variants={fadeInUp}
@@ -52,27 +52,27 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group relative px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+            <button className="group relative px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
               <TrendingUp className="w-5 h-5 inline-block mr-2" />
               Explore Services
             </button>
-            <button className="px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+            <button className="px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
               Open Account
             </button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-20 mt-10 pt-12 border-t border-white/20">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">30+</div>
+              <div className=" text-3xl   font-bold text-white mb-2">30+</div>
               <div className="text-white">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">5</div>
+              <div className=" text-3xl   font-bold text-white mb-2">5</div>
               <div className="text-white">Service Sectors</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">100%</div>
+              <div className=" text-3xl   font-bold text-white mb-2">100%</div>
               <div className="text-white">SECP Compliant</div>
             </div>
           </div>

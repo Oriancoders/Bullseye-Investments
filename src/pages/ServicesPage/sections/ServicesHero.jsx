@@ -12,11 +12,11 @@ const ServicesHero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
             <Target className="w-4 h-4 text-white mr-2" />
-            <span className="text-white text-sm font-medium">Comprehensive Financial Solutions</span>
+            <span className="text-white text-lg font-medium">What Bullseye Investments Offer</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl lg:text-7xl font-serif text-white mb-6 leading-tight">
+          <h1 className="text-5xl lg:text-7xl  text-white mb-6 leading-tight">
             Your Gateway to<br />
             <span className="text-gray-300">Diversified Investment</span><br />
             <span className="font-bold">Success</span>
@@ -29,7 +29,7 @@ const ServicesHero = () => {
           </p>
 
           {/* Primary CTA - Optimized for Fitts's Law */}
-          <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-12 py-6 text-xl font-bold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[320px] mb-8">
+          <button className="bg-green-600 hover:bg-green-800  text-white px-6 py-3 font-semibold  transition-all duration-200 transform rounded-sm mb-12">
             <TrendingUp className="w-6 h-6 inline-block mr-3" />
             Start Your Investment Journey
           </button>

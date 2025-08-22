@@ -7,14 +7,17 @@ import WhyChooseServices from './sections/WhyChooseServices'
 import ServicesCTA from './sections/ServicesCTA'
 import TrustCompliance from './sections/TrustCompliance'
 import ContactLocation from './sections/ContactLocation'
+import PremiumServices from './sections/PremiumServices'
+import AssociatedCompanies from './sections/AssociatedCompanies'
 
 const ServicesPage = () => {
   return (
     <div className='overflow-x-hidden'>
       <Navigation/>
         <ServicesHero/>
-        <ServicesGrid/>
+        <PremiumServices/>
         <WhyChooseServices/>
+        <AssociatedCompanies/>
         <ContactLocation/>
         <ServicesCTA/>
         <TrustCompliance/>
