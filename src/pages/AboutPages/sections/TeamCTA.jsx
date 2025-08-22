@@ -51,7 +51,7 @@ const TeamCTA = () => {
 ];
 
   return (
-    <section className="pt-10 sm:pb-10 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section className="pt-10 pb-10 bg-gradient-to-br from-black via-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-8">
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-8">
@@ -121,7 +121,7 @@ const TeamCTA = () => {
       </div>
 
       {/* CTA Section */}
-        <div className="text-center">
+        <div className="text-center p-4">
           <div className="bg-white/10 backdrop-blur-sm sm:rounded-2xl p-12 border border-white/20 max-w-4xl mx-auto">
             <h3 className="text-3xl  text-white mb-6">
               Ready to Start Your Investment Journey?
@@ -129,7 +129,7 @@ const TeamCTA = () => {
             <p className="text-xl text-gray-300 mb-8">
               Join thousands of satisfied clients who trust us with their financial future
             </p>
-            <button className="group bg-white text-black px-12 py-4 text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+            <button className="group bg-white text-black sm:px-12 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center">
               Join Our Journey
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>

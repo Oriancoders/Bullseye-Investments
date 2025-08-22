@@ -5,15 +5,15 @@ const ContactLocation = () => {
   const contactMethods = [
     {
       icon: Phone,
-      label: 'Phone',  
-      value: '+92-XXX-XXXXXXX',
+      label: 'Phone',
+      value: '021 35164519',
       action: 'Call Now',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@bullseyeinvestments.com',
+      value: 'Bullseyeinvestments2025@gmail.com',
       action: 'Send Email',
       color: 'from-green-500 to-green-600'
     },
@@ -39,60 +39,96 @@ const ContactLocation = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Methods - Law of Proximity */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-black mb-8">Get In Touch</h3>
-            
-            {contactMethods.map((method, index) => (
-              <div key={index} className="group bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <div className="flex items-center">
-                  <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <method.icon className="w-6 h-6 text-white" />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className="font-semibold text-black">{method.label}</div>
-                    <div className="text-gray-600">{method.value}</div>
-                  </div>
-                  
-                  {/* Optimized for Fitts's Law - Large clickable area */}
-                  <button className={`bg-gradient-to-r from-black to-black/90  text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 min-w-[120px]`}>
-                    {method.action}
-                  </button>
-                </div>
-              </div>
-            ))}
 
-            {/* Office Address */}
-            <div className="bg-black text-white rounded-lg p-8 mt-8">
-              <div className="flex items-start">
-                <MapPin className="w-8 h-8 text-white mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-xl font-bold mb-3">Head Office</h4>
-                  <p className="text-gray-300 leading-relaxed">
-                    Bullseye Investments Private Limited<br />
-                    Financial District<br />
-                    Karachi, Pakistan
-                  </p>
-                </div>
+
+          {/* Map Placeholder - Quick Location Recognition */}
+          <div className="h-96 bg-gradient-to-br rounded-lg overflow-hidden  from-gray-200 to-gray-300 flex items-center justify-center relative">
+            <div className="flex items-start">
+              <MapPin className="w-8 h-8 text-black mr-4 mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="text-xl font-bold mb-3">Head Office</h4>
+                <p className="text-gray-900 leading-relaxed">
+                  Office 101 Al Zara Tower Building <br />
+                  198 Midway commercial B , <br />
+                  Bahria Town Karachi
+                </p>
               </div>
+            </div>
+            {/* <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
+                width="500"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map"
+                className='z-10'
+              ></iframe> */}
+          </div>
+
+          <div className="h-96 bg-gradient-to-br rounded-lg overflow-hidden  from-gray-200 to-gray-300 flex items-center justify-center relative">
+
+            {/* <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
+                width="500"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map"
+                className='z-10'
+              ></iframe> */}
+          </div>
+        </div>
+
+        {/* Contact Methods - Law of Proximity */}
+        <div className=" grid md:grid-cols-3 grid-cols-1 mt-6">
+
+          {contactMethods.map((method, index) => (
+            <div key={index} className="group bg-gray-50 rounded-lg p-6  transition-all duration-300 transform ">
+              <div className="flex items-center">
+                <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  transition-transform duration-300`}>
+                  <method.icon className="w-6 h-6 text-white" />
+                </div>
+
+                <div className="flex-1">
+                  <div className="font-semibold text-black">{method.label}</div>
+                  <div className="text-gray-600">{method.value}</div>
+                </div>
+
+
+              </div>
+            </div>
+          ))}
+
+
+        </div>
+
+        {/* Office Address */}
+        <div className="max-w-4xl mx-auto bg-black text-white rounded-lg p-8 mt-8 flex justify-evenly">
+          <div className="flex items-start">
+            <MapPin className="w-8 h-8 text-white mr-4 mt-1 flex-shrink-0" />
+            <div>
+              <h4 className="text-xl font-bold mb-3">Head Office</h4>
+              <p className="text-gray-300 leading-relaxed">
+                Office 101 Al Zara Tower Building <br />
+                198 Midway commercial B , <br />
+                Bahria Town Karachi
+              </p>
             </div>
           </div>
 
-          {/* Map Placeholder - Quick Location Recognition */}
-          <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <div className="h-96 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-                <h4 className="text-xl font-bold text-gray-700 mb-2">Interactive Map</h4>
-                <p className="text-gray-600">
-                  Google Maps integration would be embedded here<br />
-                  showing our exact office location in Karachi
-                </p>
-                <button className="mt-4 bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
-                  View on Google Maps
-                </button>
-              </div>
+          <div className="flex items-start">
+            <MapPin className="w-8 h-8 text-white mr-4 mt-1 flex-shrink-0" />
+            <div>
+              <h4 className="text-xl font-bold mb-3">Corporate Office</h4>
+              <p className="text-gray-300 leading-relaxed">
+                1304, 13th floor Balad Trade Center 3<br />
+                Boat Basin Clifton Block 7 <br />
+                Karachi
+              </p>
             </div>
           </div>
         </div>

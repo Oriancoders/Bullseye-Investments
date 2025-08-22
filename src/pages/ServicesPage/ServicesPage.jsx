@@ -9,6 +9,7 @@ import TrustCompliance from './sections/TrustCompliance'
 import ContactLocation from './sections/ContactLocation'
 import PremiumServices from './sections/PremiumServices'
 import AssociatedCompanies from './sections/AssociatedCompanies'
+import InvestorComplaints from './sections/InvestorsComplaints'
 
 const ServicesPage = () => {
   return (
@@ -18,6 +19,7 @@ const ServicesPage = () => {
         <PremiumServices/>
         <WhyChooseServices/>
         <AssociatedCompanies/>
+        <InvestorComplaints/>
         <ContactLocation/>
         <ServicesCTA/>
         <TrustCompliance/>

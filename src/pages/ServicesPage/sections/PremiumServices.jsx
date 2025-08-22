@@ -1,14 +1,8 @@
 // PremiumServices.jsx
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Headphones,
-  GraduationCap,
-  UserPlus,
-  Video,
-  TrendingUp,
-  Crown,
-} from "lucide-react";
+import { BarChart3, Landmark, ShieldCheck, Smartphone, UserCheck } from "lucide-react";
+import { useGlobalContext } from "../../../GlobalStates/GlobalState";
 
 /**
  * Premium Services Section
@@ -20,62 +14,56 @@ import {
  * NOTE: Replace unsplash image URLs with your actual assets later.
  */
 
+
 const services = [
   {
-    Icon: Headphones,
-    title: "24/7 Trading Support",
+    Icon: BarChart3,
+    title: "Commodities & Futures Trading",
     short:
-      "Analysts available day & night to guide your trades and remove uncertainty.",
+      "Trade gold, silver, oil, agricultural products, and currencies through advanced platforms like MT5.",
     long:
-      "Our licensed trading analysts provide on-demand guidance via chat, phone, and scheduled one-on-one calls. You’ll receive personalized market checks, verified trade ideas, and risk-aware suggestions during volatility. Priority response for account issues during market hours.",
-    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1400&q=60",
+      "Access global markets via MT5 with reliable execution, deep liquidity, and transparent pricing. Our commodities & futures desk ensures you can trade in energy, metals, agricultural products, and currency pairs efficiently, all backed by real-time analytics.",
+    image: "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?auto=format&fit=crop&w=1400&q=60",
   },
   {
-    Icon: GraduationCap,
-    title: "Training Before Trading",
+    Icon: Landmark,
+    title: "Equity & Capital Market Services",
     short:
-      "Structured learning path: lessons, demos, live trading workshops and certification.",
+      "Investment opportunities in stocks, ETFs, derivatives, and fixed income instruments (upon PSX approval).",
     long:
-      "We run beginner to advanced course tracks, demo-account exercises, and live workshops with real-time trade walkthroughs. Each trainee gets progress checkpoints, downloadable cheat-sheets, and access to recordings to revisit concepts.",
-    image: "https://images.unsplash.com/photo-1529257414771-1960a05f8a5b?auto=format&fit=crop&w=1400&q=60",
+      "Once PSX trading rights are approved, we’ll provide seamless access to Pakistan’s equity markets. Investors will be able to diversify portfolios with shares, ETFs, derivatives, and fixed income instruments under a regulated framework.",
+    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=60",
   },
   {
-    Icon: UserPlus,
-    title: "Free Account Opening",
+    Icon: ShieldCheck,
+    title: "Secure Clearing & Settlement",
     short:
-      "Fast, secure onboarding with a dedicated onboarding specialist to help you start.",
+      "Backed by robust risk management and regulated clearinghouses for peace of mind.",
     long:
-      "Open a trading account without fees, follow a guided KYC flow, upload documents securely, and receive a personal onboarding call. We help map your first steps (demo -> small live trades -> portfolio plan).",
-    image: "https://images.unsplash.com/photo-1542878807-5c2f6b2a9fc2?auto=format&fit=crop&w=1400&q=60",
+      "Every trade is processed through regulated clearinghouses with advanced risk management protocols. Clients benefit from secure settlements, margin monitoring, and compliance-driven safeguards.",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=60",
   },
   {
-    Icon: Video,
-    title: "Expert Webinars",
+    Icon: Smartphone,
+    title: "Digital Trading Solutions",
     short:
-      "Weekly webinars and quarterly deep-dives led by market professionals.",
+      "Trade from anywhere with mobile, web, and desktop platforms designed for speed and ease.",
     long:
-      "Attend live sessions focusing on market themes, technical setups, macro events, and Q&A. Webinars include post-session notes and trade examples. Premium clients get exclusive invite-only briefings.",
-    image: "https://images.unsplash.com/photo-1532619675605-86f9b5a3ac3a?auto=format&fit=crop&w=1400&q=60",
+      "Our multi-device trading platforms allow clients to trade seamlessly across web, desktop, and mobile. Intuitive interfaces, fast order execution, charting tools, and live market feeds keep you connected to opportunities worldwide.",
+    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1400&q=60",
   },
   {
-    Icon: TrendingUp,
-    title: "Daily Market Updates",
+    Icon: UserCheck,
+    title: "Account Opening & Support",
     short:
-      "Concise pre-market briefings and evening wrap-ups with actionable ideas.",
+      "Simplified Sahulat Accounts for retail investors with dedicated onboarding support.",
     long:
-      "Receive short, high-signal daily briefings: top market movers, sector themes, watchlists and 3-5 actionable trade ideas. Delivered via email and in-app. Designed for busy investors who need quick clarity.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60",
-  },
-  {
-    Icon: Crown,
-    title: "Premier Client Solutions",
-    short:
-      "Concierge-level support, bespoke strategies, and invitations to premium events.",
-    long:
-      "Premier clients receive tailored portfolio consultations, bespoke strategies, priority analyst access, and invitations to private investor briefings and networking events. Fully personalized, confidential service.",
-    image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1400&q=60",
+      "Open an account quickly with our guided KYC process and Sahulat account option. From document uploads to account activation, our support team ensures smooth onboarding. Continuous assistance is provided via phone, email, and chat for ongoing needs.",
+    image: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=1400&q=60",
   },
 ];
+
+
 
 /* Styling notes:
  - Black background for page, white text
@@ -90,7 +78,7 @@ export default function PremiumServices() {
     <section id="services" className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             What We Offer
           </h2>
           <p className="mt-3 text-slate-300 max-w-2xl mx-auto">
@@ -99,7 +87,7 @@ export default function PremiumServices() {
           </p>
         </div>
 
-        <div className="space-y-28">
+        <div className="md:space-y-28 space-y-20">
           {services.map((s, i) => (
             <ServiceBlock
               key={i}
@@ -148,6 +136,8 @@ export default function PremiumServices() {
 
 /* ServiceBlock: alternating image left/right, parallax image, cinematic reveal */
 function ServiceBlock({ service, index, onReadMore }) {
+  const {scrwidth} = useGlobalContext()
+
   const ref = useRef(null);
 
   // Per-section scroll progress -> parallax for the image
@@ -157,27 +147,27 @@ function ServiceBlock({ service, index, onReadMore }) {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
-  // Layout: alternate left/right on larger screens
   const reversed = index % 2 === 1;
 
   return (
     <motion.div
       ref={ref}
-      className={`relative flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-12`}
+      className={`relative grid lg:grid-cols-2 grid-cols-1 items-center  gap-8 lg:gap-12         
+        `}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
+      key={index}
     >
       {/* IMAGE */}
       <div
-        className={`md:w-1/2 w-full rounded-2xl overflow-hidden shadow-xl`}
-        style={{ order: reversed ? 2 : 1 }}
+        className={`w-full rounded-2xl overflow-hidden shadow-xl ${index % 2 === 0 && 'order-2 lg:order-1'} `}
       >
         <motion.img
           src={service.image}
           alt={service.title}
           loading="lazy"
-          className="w-full h-72 md:h-[420px] object-cover grayscale transition-transform duration-700"
+          className="w-full h-80 object-cover grayscale transition-transform duration-700"
           style={{ y }}
           initial={{ scale: 1.04 }}
           whileInView={{ scale: 1 }}
@@ -197,8 +187,7 @@ function ServiceBlock({ service, index, onReadMore }) {
 
       {/* CONTENT (glass-like panel) */}
       <motion.div
-        className="md:w-1/2 w-full"
-        style={{ order: reversed ? 1 : 2 }}
+        className={`w-full ${index % 2 === 0 && ' order-1 lg:order-2'}`}
         initial={{ opacity: 0, x: reversed ? 50 : -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

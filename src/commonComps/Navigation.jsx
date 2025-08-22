@@ -28,8 +28,8 @@ const Navigation = () => {
         { label: 'MetaTrader', href: '/MetaTrader' },
       ]
     },
-    { label: 'FAQ', href: '/' },
-    { label: 'Contact Us', href: '/' }
+    { label: 'FAQ', href: '/faqs' },
+    { label: 'Contact Us', href: '/Contact' }
   ];
 
   return (
