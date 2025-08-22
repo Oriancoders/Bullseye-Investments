@@ -30,7 +30,7 @@ const Timeline = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-white via-white to-gray-200">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
@@ -45,12 +45,14 @@ const Timeline = () => {
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300 hidden lg:block"></div>
 
-          <div className="space-y-12">
+          <div className="lg:space-y-10">
             {milestones.map((milestone, index) => (
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col lg:gap-12`}>
                 {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'} text-center lg:text-left mb-8 lg:mb-0`}>
-                  <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="w-full lg:hidden bg-black h-[0.1px] my-10" />
+
+                <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'} text-center lg:text-left mb-0`}>
+                  <div className="lg:bg-white p-8 rounded-lg lg:shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                     <div className="flex items-center justify-center lg:justify-start mb-4">
                       <milestone.icon className="w-8 h-8 text-black mr-3" />
                       <h3 className="text-2xl font-bold text-black">{milestone.title}</h3>
@@ -65,7 +67,6 @@ const Timeline = () => {
                     <span className="text-white font-bold text-lg">{milestone.year}</span>
                   </div>
                 </div>
-
                 {/* Spacer for alternating layout */}
                 <div className="flex-1 hidden lg:block"></div>
               </div>

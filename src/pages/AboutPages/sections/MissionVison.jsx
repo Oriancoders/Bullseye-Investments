@@ -21,7 +21,7 @@ const MissionVision = () => {
   ];
 
   return (
-    <section className="py-20 bg-white text-black">
+    <section className="py-20 bg-gradient-to-tr from-white via-white to-gray-200 text-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -32,10 +32,10 @@ const MissionVision = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
             <div key={index} className="group">
-              <div className="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-white border-l-4 border-black h-full">
+              <div className="lg:bg-gray-50 p-8 rounded-lg lg:shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-white border-l-4 border-black h-full">
                 <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
                   <pillar.icon className="w-8 h-8 text-white" />
                 </div>

@@ -123,7 +123,7 @@ const TeamCTA = () => {
       {/* CTA Section */}
         <div className="text-center">
           <div className="bg-white/10 backdrop-blur-sm sm:rounded-2xl p-12 border border-white/20 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-serif text-white mb-6">
+            <h3 className="text-3xl  text-white mb-6">
               Ready to Start Your Investment Journey?
             </h3>
             <p className="text-xl text-gray-300 mb-8">

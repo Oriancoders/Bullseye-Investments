@@ -3,7 +3,7 @@ import { TrendingUp, Globe, Target, Building, Calendar, ShieldCheck } from 'luci
 
 const AboutHero = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-20">
+    <section className=" bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
 
@@ -15,7 +15,7 @@ const AboutHero = () => {
               <Target className="w-4 h-4 text-white mr-2" />
               <span className="text-white text-sm font-medium">About Bullseye Investment</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl  text-white mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold  text-white mb-6 leading-tight">
               Shaping the Future of
               <span className="block text-gray-200">Financial Services</span>
             </h1>
@@ -35,7 +35,7 @@ const AboutHero = () => {
 
           {/* Right Visual */}
           <div className="relative animate-slide-up">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-white ">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
               {/* <ul className='text-xl space-y-3 mb-6'>
                 <li className='flex flex-col'>
                   Company Form: 
@@ -48,7 +48,7 @@ const AboutHero = () => {
                 </li>
               </ul> */}
 
-              <div className="grid grid-cols-3 gap-6 mb-6">
+              <div className="grid sm:grid-cols-3 gap-6 mb-6">
                 <div className="text-center space-y-2">
                   <Building  className="w-12 h-12 text-white mx-auto " />
                   <div className="text-xl font-bold text-white">Company Form</div>
