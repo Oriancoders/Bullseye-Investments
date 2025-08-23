@@ -21,7 +21,9 @@ const PSXSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
 
             <div className=" mb-16 col-span-1">
-          
+          <div className="w-20 h-20  rounded-full flex items-center justify-center  mb-8">
+            <img src='https://dps.psx.com.pk/static/images/logo-200.png' className="w-full h-full text-white" />
+          </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Pakistan Stock Exchange (PSX)
           </h2>
@@ -115,17 +117,17 @@ const PSXSection = () => {
           <h3 className="text-2xl font-bold text-black mb-6">Trading Tools & Resources</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <Clock className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <Clock className="w-8 h-8 text-black mx-auto mb-4" />
               <h4 className="font-bold text-black mb-2">Market Hours</h4>
               <p className="text-gray-600 text-sm">Monday - Friday<br />9:15 AM - 3:30 PM</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <BarChart3 className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <BarChart3 className="w-8 h-8 text-black mx-auto mb-4" />
               <h4 className="font-bold text-black mb-2">Live Charts</h4>
               <p className="text-gray-600 text-sm">Real-time market data<br />and technical analysis</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
-              <ExternalLink className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <ExternalLink className="w-8 h-8 text-black mx-auto mb-4" />
               <h4 className="font-bold text-black mb-2">PSX Portal</h4>
               <p className="text-gray-600 text-sm">Official PSX website<br />and trading platform</p>
             </div>
@@ -133,13 +135,13 @@ const PSXSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <button className="bg-blue-600 text-white px-8 py-4 font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 mr-4">
+        <div className=" text-center flex sm:flex-row flex-col gap-4 items-center justify-center w-full">
+          <button className="border-2 border-black bg-black text-white px-8 py-4 font-semibold  transition-all duration-200 transform hover:scale-105 ">
             Start PSX Trading
           </button>
-          <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-200">
+          <a href='https://dps.psx.com.pk/' target='_blank' className="border-2 border-black text-black px-8 py-4 font-semibold hover:bg-black hover:text-white transition-all duration-200">
             Visit PSX Portal
-          </button>
+          </a>
         </div>
       </div>
     </section>

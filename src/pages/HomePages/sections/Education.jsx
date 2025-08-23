@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart3, BookOpen, TrendingUp, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Education = () => {
   return (
@@ -37,9 +38,9 @@ const Education = () => {
             </div>
           </div>
           
-          <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+          <Link to={"/Markets"} className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
             Learn Market Basics
-          </button>
+          </Link>
         </div>
       </div>
     </section>

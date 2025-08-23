@@ -41,7 +41,7 @@ const MarketHeatmap = () => {
           <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-8">
             <BarChart3 className="w-10 h-10 text-white" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Market Trends & Heatmap
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ const MarketHeatmap = () => {
         </div>
 
         {/* Heatmap Grid */}
-        <div className="grid grid-cols-4 grid-rows-4 gap-4 h-96 mb-12">
+        <div className="grid grid-cols-4 grid-rows-4 gap-4 h-fit mb-12">
           {sectors.map((sector, index) => (
             <div
               key={index}

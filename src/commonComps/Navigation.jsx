@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logoblack from '../assets/logoblack.png'
+import whitelogo from '../assets/whitelogo.png'
 
+import { Link } from 'react-router-dom';
+import { useGlobalContext } from '../GlobalStates/GlobalState';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEducationOpenMobile, setIsEducationOpenMobile] = useState(false);
-  const [activePage, setActivePage] = useState('#home'); // new state for active link
+  const [activePage, setActivePage] = useState('home'); // new state for active link
+  const {scrwidth} = useGlobalContext()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +29,7 @@ const Navigation = () => {
       label: 'Education', 
       href: '#education', 
       submenu: [
-        { label: 'Markets', href: '/Market' },
+        { label: 'Markets', href: '/Markets' },
         { label: 'MetaTrader', href: '/MetaTrader' },
       ]
     },
@@ -34,24 +39,22 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 py-4 ${
-      isScrolled ? 'bg-white shadow-lg text-black' : 'bg-transparent text-white'
+      isScrolled ? 'bg-white shadow-lg text-black' : 'sm:bg-transparent bg-white sm:text-white text-black'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold">
-              Bullseye <span className="font-light">Investments</span>
-            </h1>
-          </div>
+          <Link to={"/"} className="flex-shrink-0">
+            <img src={logoblack} alt="" className='w-40' />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
                 {!item.submenu ? (
-                  <a
-                    href={`http://localhost:5173${item.href}`}
+                  <Link
+                    to={item.href}
                     onClick={() => setActivePage(item.href)}
                     className={`
                       transition-colors duration-200 font-medium relative 
@@ -65,7 +68,7 @@ const Navigation = () => {
                     `}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ) : (
                   <>
                     {/* Parent menu item */}
@@ -79,14 +82,14 @@ const Navigation = () => {
                     <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50">
                       <div className="flex flex-col">
                         {item.submenu.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.label}
-                            href={subItem.href}
+                            to={subItem.href}
                             onClick={() => setActivePage(subItem.href)}
                             className="px-4 py-2 text-gray-700 hover:bg-gray-100 font-medium"
                           >
                             {subItem.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -109,7 +112,7 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-black hover:text-gray-600 transition-colors"
+              className={`${isScrolled ? 'text-black' : ' sm:text-white text-black' } transition-colors`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -118,13 +121,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4">
+          <div className="lg:hidden mt-4 pb-4 ">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) =>
                 !item.submenu ? (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.href}
                     onClick={() => {
                       setActivePage(item.href);
                       setIsMobileMenuOpen(false);
@@ -132,7 +135,7 @@ const Navigation = () => {
                     className="text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ) : (
                   <div key={item.label} className="border-b border-gray-100">
                     {/* Education header toggle */}
@@ -152,9 +155,9 @@ const Navigation = () => {
                     {isEducationOpenMobile && (
                       <div className="flex flex-col pl-4 overflow-hidden">
                         {item.submenu.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.label}
-                            href={subItem.href}
+                            to={subItem.href}
                             onClick={() => {
                               setActivePage(subItem.href);
                               setIsMobileMenuOpen(false);
@@ -162,7 +165,7 @@ const Navigation = () => {
                             className="text-gray-600 hover:text-black py-2 border-b border-gray-100"
                           >
                             {subItem.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}

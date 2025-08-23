@@ -51,7 +51,7 @@ const MarketSnapshot= () => {
           {markets.map((market, index) => (
             <div key={index} className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-r bg-amber-700 to-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <market.icon className="w-8 h-8 text-white" />
               </div>
               

@@ -33,7 +33,7 @@ const MarketTools = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Tools & Resources
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

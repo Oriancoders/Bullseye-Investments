@@ -8,7 +8,7 @@ import PMEXSection from './sections/PMEXSection'
 import ForexSection from './sections/ForexSection'
 import MarketHeatmap from './sections/MarketHeatMap'
 import MarketTools from './sections/MarketTools'
-import MarketFAQ from './sections/MarketFAQ'
+// import MarketFAQ from './sections/MarketFAQ'
 import MarketCTA from './sections/MarketCTA'
 
 const MarketPage = () => {
@@ -18,11 +18,11 @@ const MarketPage = () => {
       <MarketsHero/>
       <MarketSnapshot/>
       <PSXSection/>
+      <MarketHeatmap/>
       <PMEXSection/>
       <ForexSection/>
-      <MarketHeatmap/>
       <MarketTools/>
-      <MarketFAQ/>
+      {/* <MarketFAQ/> */}
       <MarketCTA/>
       <Footer/>
     </div>

@@ -14,6 +14,7 @@ export const GlobalProvider = ({ children }) => {
 
 
     const [scrwidth, setWidth] = useState(window.innerWidth);
+    const [activePage , setActivePage] = useState("Home")
 
 
     useEffect(() => {
@@ -34,6 +35,7 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             scrwidth,
+            activePage , setActivePage
         }}>
             {children}
         </GlobalContext.Provider>

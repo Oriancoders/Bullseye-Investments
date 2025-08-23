@@ -1,5 +1,6 @@
 import React from 'react';
 import { BarChart3, TrendingUp, Shield, DollarSign, Home, Headphones, GraduationCap, CreditCard, Video, FileText, Crown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -60,9 +61,9 @@ const Services = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+          <Link to={"/Services"} className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
             View All Services
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -106,7 +106,7 @@ export default function PremiumServices() {
             <img
               src={services[modal.idx].image}
               alt={services[modal.idx].title}
-              className="w-full h-64 object-cover rounded-lg mb-6"
+              className="w-full sm:h-64 h-fit object-cover rounded-lg mb-6"
               loading="lazy"
             />
             <h3 className="text-2xl font-semibold mb-3">
@@ -161,7 +161,7 @@ function ServiceBlock({ service, index, onReadMore }) {
     >
       {/* IMAGE */}
       <div
-        className={`w-full rounded-2xl overflow-hidden shadow-xl ${index % 2 === 0 && 'order-2 lg:order-1'} `}
+        className={`w-full rounded-2xl overflow-hidden shadow-xl ${(index % 2 == 0 && scrwidth > 1024) && 'order-2'} `}
       >
         <motion.img
           src={service.image}
@@ -187,13 +187,13 @@ function ServiceBlock({ service, index, onReadMore }) {
 
       {/* CONTENT (glass-like panel) */}
       <motion.div
-        className={`w-full ${index % 2 === 0 && ' order-1 lg:order-2'}`}
+        className={`w-full ${(index % 2 == 0 && scrwidth > 1024) && 'order-1'}`}
         initial={{ opacity: 0, x: reversed ? 50 : -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <div
-          className="rounded-xl p-8"
+          className="rounded-xl md:p-8 sm:p-4 p-2"
           style={{
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(255,255,255,0.06)",
@@ -217,13 +217,13 @@ function ServiceBlock({ service, index, onReadMore }) {
           <div className="flex items-center gap-3">
             <a
               href="#open-account"
-              className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-semibold"
+              className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white sm:px-4 px-2 py-2 rounded-md font-semibold"
             >
               Open Free Account
             </a>
             <button
               onClick={onReadMore}
-              className="px-3 py-2 border border-slate-700 rounded-md text-slate-200 hover:bg-slate-900"
+              className="sm:px-3 px-2 py-2 border border-slate-700 rounded-md text-slate-200 hover:bg-slate-900"
             >
               Read More
             </button>

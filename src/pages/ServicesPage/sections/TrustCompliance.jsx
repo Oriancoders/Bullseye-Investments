@@ -66,7 +66,7 @@ const TrustCompliance = () => {
         </div>
 
         {/* Additional Trust Elements */}
-        <div className="bg-white rounded-2xl shadow-xl p-12 text-center border border-gray-200">
+        <div className="bg-white rounded-2xl md:shadow-xl md:p-12 sm:p-6 p-4 text-center border border-gray-200">
           <h3 className="text-3xl font-bold text-black mb-6">Your Security is Our Priority</h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             We maintain the highest standards of regulatory compliance, data security, and client fund protection. 

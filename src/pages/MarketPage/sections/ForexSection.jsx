@@ -32,10 +32,10 @@ const ForexSection = () => {
     <section id="forex" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
-            <DollarSign className="w-10 h-10 text-white" />
+          <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-8 overflow-hidden">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnbGkl2svbiGGqEOfbe_655TmYwC2m7_Tqxg&s' className="w-full h-full text-white" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Foreign Exchange (Forex)
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -50,7 +50,7 @@ const ForexSection = () => {
             <h3 className="text-2xl font-bold text-black mb-6">Forex Trading Basics</h3>
             <div className="space-y-6">
               {forexBasics.map((basic, index) => (
-                <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div key={index} className="bg-white rounded-lg p-6 sm:shadow-lg sm:hover:shadow-xl transition-all duration-300">
                   <h4 className="font-bold text-black mb-2">{basic.title}</h4>
                   <p className="text-gray-600">{basic.description}</p>
                 </div>
@@ -128,7 +128,7 @@ const ForexSection = () => {
         </div>
 
         {/* Forex Benefits */}
-        <div className="bg-green-600 rounded-lg p-8 mb-8">
+        <div className="bg-black rounded-lg p-8 mb-8">
           <div className="text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Why Trade Forex with Bullseye?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -152,13 +152,13 @@ const ForexSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <button className="bg-green-600 text-white px-8 py-4 font-semibold hover:bg-green-700 transition-all duration-200 transform hover:scale-105 mr-4">
+        <div className="text-center flex sm:flex-row flex-col gap-4 items-center justify-center w-full">
+          <button className="border-2 border-black bg-black text-white px-8 py-4 font-semibold hover:bg-black transition-all duration-200 transform hover:scale-105 ">
             Start Forex Trading
           </button>
-          <button className="border-2 border-green-600 text-green-600 px-8 py-4 font-semibold hover:bg-green-600 hover:text-white transition-all duration-200">
+          <a href='https://www.cmcmarkets.com/en-gb/learn-forex/forex-trading-for-beginners' target='_blank' className="border-2 border-black text-black px-8 py-4 font-semibold hover:bg--black hover:text-white transition-all duration-200 hover:bg-black">
             Learn Forex Basics
-          </button>
+          </a>
         </div>
       </div>
     </section>

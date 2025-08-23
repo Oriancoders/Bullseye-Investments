@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrendingUp, BarChart3, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Markets = () => {
   const markets = [
@@ -78,9 +79,9 @@ const Markets = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+          <Link to={"/Markets"} className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
             Explore Markets
-          </button>
+          </Link>
         </div>
       </div>
     </section>

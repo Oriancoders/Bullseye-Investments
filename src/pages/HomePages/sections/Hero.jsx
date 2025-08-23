@@ -3,6 +3,7 @@ import { TrendingUp, Shield } from 'lucide-react';
 import heroBG from '../../..//assets/heroBG.jpg'
 import { motion } from 'framer-motion';
 import { fadeInUp } from '../../../utils/animations';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -52,10 +53,10 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group relative px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
+            <Link to="/Services" className="group relative px-8 py-4 bg-white text-black font-semibold hover:bg-gray-100 transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
               <TrendingUp className="w-5 h-5 inline-block mr-2" />
               Explore Services
-            </button>
+            </Link>
             <button className="px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
               Open Account
             </button>

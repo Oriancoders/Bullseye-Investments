@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Award, Globe, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const credentials = [
@@ -46,9 +47,9 @@ const About = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+          <Link to="About" className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
             Learn More About Us
-          </button>
+          </Link>
         </div>
       </div>
     </section>

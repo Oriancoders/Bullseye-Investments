@@ -1,24 +1,26 @@
 import React from 'react';
-import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
+import {  Phone, Mail,  } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const ContactLocation = () => {
   const contactMethods = [
     {
-      icon: Phone,
+      icon: <Phone className="w-6 h-6 text-white"/>,
       label: 'Phone',
       value: '021 35164519',
       action: 'Call Now',
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: Mail,
+      icon: <Mail className="w-6 h-6 text-white"/>,
       label: 'Email',
       value: 'Bullseyeinvestments2025@gmail.com',
       action: 'Send Email',
       color: 'from-green-500 to-green-600'
     },
     {
-      icon: MessageCircle,
+      icon: <FaWhatsapp className="w-6 h-6 text-white"/>,
       label: 'WhatsApp',
       value: '+92-XXX-XXXXXXX',
       action: 'Chat Now',
@@ -38,48 +40,58 @@ const ContactLocation = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
 
           {/* Map Placeholder - Quick Location Recognition */}
-          <div className="h-96 bg-gradient-to-br rounded-lg overflow-hidden  from-gray-200 to-gray-300 flex items-center justify-center relative">
-            <div className="flex items-start">
-              <MapPin className="w-8 h-8 text-black mr-4 mt-1 flex-shrink-0" />
+          <div className="h-fit bg-gray-100 rounded-lg overflow-hidden  flex  flex-col    relative">
+
+            <div className="relative w-full h-0 pb-[70%] overflow-hidden rounded-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
+                className="absolute top-0 left-0 w-full h-full border-0"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map"
+              ></iframe>
+            </div>
+
+
+            <div className="flex items-start  bg-white z-20 w-full p-5">
               <div>
                 <h4 className="text-xl font-bold mb-3">Head Office</h4>
-                <p className="text-gray-900 leading-relaxed">
+                <p className=" leading-relaxed">
                   Office 101 Al Zara Tower Building <br />
                   198 Midway commercial B , <br />
                   Bahria Town Karachi
                 </p>
               </div>
             </div>
-            {/* <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
-                width="500"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map"
-                className='z-10'
-              ></iframe> */}
           </div>
 
-          <div className="h-96 bg-gradient-to-br rounded-lg overflow-hidden  from-gray-200 to-gray-300 flex items-center justify-center relative">
+          <div className="h-fit bg-gray-100 rounded-lg overflow-hidden flex  flex-col    relative">
 
-            {/* <iframe
+            <div className="relative w-full h-0 pb-[70%] overflow-hidden rounded-lg">
+              <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
-                width="500"
-                height="400"
-                style={{ border: 0 }}
+                className="absolute top-0 left-0 w-full h-full border-0"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Map"
-                className='z-10'
-              ></iframe> */}
+              ></iframe>
+            </div>
+            <div className="flex items-start   z-20 w-full p-5">
+              <div>
+                <h4 className="text-xl font-bold mb-3">Coperate Office</h4>
+                <p className=" leading-relaxed">
+                  1304, 13th floor Balad Trade Center 3<br />
+                  Boat Basin Clifton Block 7<br />
+                  Karachi
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -88,9 +100,9 @@ const ContactLocation = () => {
 
           {contactMethods.map((method, index) => (
             <div key={index} className="group bg-gray-50 rounded-lg p-6  transition-all duration-300 transform ">
-              <div className="flex items-center">
-                <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  transition-transform duration-300`}>
-                  <method.icon className="w-6 h-6 text-white" />
+              <div className="flex md:items-center sm:flex-row flex-col gap-4">
+                <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  transition-transform duration-300 `}>
+                  {method.icon}
                 </div>
 
                 <div className="flex-1">
@@ -106,32 +118,7 @@ const ContactLocation = () => {
 
         </div>
 
-        {/* Office Address */}
-        <div className="max-w-4xl mx-auto bg-black text-white rounded-lg p-8 mt-8 flex justify-evenly">
-          <div className="flex items-start">
-            <MapPin className="w-8 h-8 text-white mr-4 mt-1 flex-shrink-0" />
-            <div>
-              <h4 className="text-xl font-bold mb-3">Head Office</h4>
-              <p className="text-gray-300 leading-relaxed">
-                Office 101 Al Zara Tower Building <br />
-                198 Midway commercial B , <br />
-                Bahria Town Karachi
-              </p>
-            </div>
-          </div>
 
-          <div className="flex items-start">
-            <MapPin className="w-8 h-8 text-white mr-4 mt-1 flex-shrink-0" />
-            <div>
-              <h4 className="text-xl font-bold mb-3">Corporate Office</h4>
-              <p className="text-gray-300 leading-relaxed">
-                1304, 13th floor Balad Trade Center 3<br />
-                Boat Basin Clifton Block 7 <br />
-                Karachi
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* Business Hours */}
         <div className="mt-16 bg-gray-50 rounded-2xl p-8 text-center">

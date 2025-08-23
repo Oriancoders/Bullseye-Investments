@@ -13,10 +13,10 @@ const PMEXSection = () => {
     <section id="pmex" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-8">
-            <Coins className="w-10 h-10 text-white" />
+          <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-8">
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeNz5FaHp2oqhQBoGrvx5ujwnaVDtK5osi6PjJn41shmR9rWpZYR_z56x4bAsFMfHPrg&usqp=CAU' className="w-full h-full text-white" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-serif text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Pakistan Mercantile Exchange (PMEX)
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -38,9 +38,9 @@ const PMEXSection = () => {
                 As an active PMEX member, Bullseye Investments provides direct market access 
                 with professional guidance and competitive pricing.
               </p>
-              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+              <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
                 <div className="flex items-center mb-2">
-                  <Award className="w-5 h-5 text-yellow-600 mr-2" />
+                  <Award className="w-5 h-5 text-green-500 mr-2" />
                   <span className="font-semibold text-black">PMEX Active Member</span>
                 </div>
                 <p className="text-sm text-gray-700">
@@ -98,8 +98,8 @@ const PMEXSection = () => {
         </div>
 
         {/* Benefits */}
-        <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg p-8 mb-8">
-          <div className="text-center text-black">
+        <div className="bg-black rounded-lg p-8 mb-8">
+          <div className="text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Why Trade Commodities with Bullseye?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div>
@@ -122,13 +122,13 @@ const PMEXSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-8 py-4 font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-200 transform hover:scale-105 mr-4">
+        <div className=" text-center flex sm:flex-row flex-col gap-4 items-center justify-center w-full">
+          <button className="border-2 border-black bg-black text-white px-8 py-4 font-semibold transition-all duration-200 transform hover:scale-105 ">
             Start Commodities Trading
           </button>
-          <button className="border-2 border-yellow-500 text-yellow-600 px-8 py-4 font-semibold hover:bg-yellow-500 hover:text-black transition-all duration-200">
+          <a href='https://mportal.pmex.com.pk/' target='_blank' className="border-2 border-black text-black px-8 py-4 font-semibold hover:bg-black hover:text-white transition-all duration-200">
             Visit PMEX Portal
-          </button>
+          </a>
         </div>
       </div>
     </section>

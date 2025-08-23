@@ -1,5 +1,7 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import { FaQuestion } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
@@ -14,7 +16,7 @@ const Contact = () => {
               className="absolute z-10 rounded-full  left-1/2 -translate-x-1/2 -top-2/3 "/> */}
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center z-20 relative">
         <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-8">
-          <MessageCircle className="w-10 h-10 text-white" />
+          <FaQuestion  className="w-10 h-10 text-white" />
         </div>
         
         <h2 className="text-4xl lg:text-5xl text-black mb-6">
@@ -26,9 +28,9 @@ const Contact = () => {
           Get personalized advice and support for your investment journey.
         </p>
         
-        <button className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+        <Link to={"/Contact"} className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
           Contact Us Today
-        </button>
+        </Link>
       </div>
     </section>
   );

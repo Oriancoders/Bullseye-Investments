@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Linkedin, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import whitelogo from '../assets/whitelogo.png'
 
 const Footer = () => {
   const quickLinks = [
@@ -18,9 +19,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Logo & Description */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-3xl font-bold mb-4">
-              Bullseye <span className="font-light">Investments</span>
-            </h3>
+            <img src={whitelogo} alt="" className='w-40 mb-6' />
             <p className="text-gray-200 mb-6 leading-relaxed">
               Your trusted partner for diversified financial services. SECP licensed, 
               PMEX active, with 30+ years of international experience in trading, 
