@@ -10,7 +10,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEducationOpenMobile, setIsEducationOpenMobile] = useState(false);
   const [activePage, setActivePage] = useState('home'); // new state for active link
-  const {scrwidth} = useGlobalContext()
+  const { scrwidth } = useGlobalContext()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +25,9 @@ const Navigation = () => {
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/About' },
     { label: 'Services', href: '/Services' },
-    { 
-      label: 'Education', 
-      href: '#education', 
+    {
+      label: 'Education',
+      href: '#education',
       submenu: [
         { label: 'Markets', href: '/Markets' },
         { label: 'MetaTrader', href: '/MetaTrader' },
@@ -38,9 +38,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 py-4 ${
-      isScrolled ? 'bg-white shadow-lg text-black' : 'sm:bg-transparent bg-white sm:text-white text-black'
-    }`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-white shadow-lg text-black' : 'sm:bg-transparent bg-white sm:text-white text-black'
+      }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -62,8 +61,8 @@ const Navigation = () => {
                       after:w-full after:h-[2px] 
                       after:transition-all after:duration-300 
                       ${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:text-white'} 
-                      ${activePage === item.href 
-                        ? 'after:bg-current after:opacity-100' 
+                      ${activePage === item.href
+                        ? 'after:bg-current after:opacity-100'
                         : 'after:bg-current after:opacity-0 group-hover:after:opacity-100'}
                     `}
                   >
@@ -100,9 +99,9 @@ const Navigation = () => {
           </div>
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-x-6">
-            <button className="bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition-all duration-200 transform rounded-sm">
+            <a href='tel:02135164519' className="bg-black text-white px-6 py-2 font-semibold hover:bg-gray-800 transition-all duration-200 transform rounded-sm">
               Call Now
-            </button>
+            </a>
             <button className="bg-green-600 hover:bg-green-800  text-white px-6 py-2 font-semibold  transition-all duration-200 transform rounded-sm">
               Open Account
             </button>
@@ -112,7 +111,7 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${isScrolled ? 'text-black' : ' sm:text-white text-black' } transition-colors`}
+              className={`${isScrolled ? 'text-black' : ' sm:text-white text-black'} transition-colors`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -145,9 +144,8 @@ const Navigation = () => {
                     >
                       {item.label}
                       <ChevronDown
-                        className={`w-4 h-4 transform transition-transform duration-200 ${
-                          isEducationOpenMobile ? 'rotate-180' : 'rotate-0'
-                        }`}
+                        className={`w-4 h-4 transform transition-transform duration-200 ${isEducationOpenMobile ? 'rotate-180' : 'rotate-0'
+                          }`}
                       />
                     </button>
 
@@ -172,7 +170,10 @@ const Navigation = () => {
                   </div>
                 )
               )}
-              <button className="bg-black text-white px-6 py-3 font-semibold mt-4 hover:bg-gray-800 transition-colors">
+              <a href='tel:02135164519' className="bg-black text-white px-6 py-3 font-semibold mt-4 hover:bg-gray-800 transition-colors text-center">
+                Call Now
+              </a>
+              <button className="bg-green-600 text-white px-6 py-3 font-semibold mt-2 hover:bg-gray-800 transition-colors">
                 Open Account
               </button>
             </div>

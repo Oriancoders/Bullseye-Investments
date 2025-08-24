@@ -29,7 +29,7 @@ const ForexSection = () => {
   ];
 
   return (
-    <section id="forex" className="py-20 bg-gray-50">
+    <section id="Forex" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-8 overflow-hidden">

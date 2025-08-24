@@ -5,25 +5,19 @@ const ContactDetails = () => {
   const contacts = [
     {
       icon: Phone,
-      label: 'Phone',
+      dial : 'Call Now',
       value: '021 35164519',
       action: 'tel:02135164519',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Mail,
-      label: 'Email',
+      dial : 'Go to gmail',
       value: 'bullseyeinvestments25@gmail.com',
-      action: 'mailto:bullseyeinvestments25@gmail.com',
+      action: 'https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRpccrJbWxqWJqgHsHGGnJnvzDNtBxJlGwlQqqgsClbnVfqfSddVHGhPTWklmGJTgdGxZxv',
       color: 'from-green-500 to-green-600'
     },
-    {
-      icon: Globe,
-      label: 'Website',
-      value: 'www.bullseyeinvestments.com',
-      action: 'https://www.bullseyeinvestments.com',
-      color: 'from-purple-500 to-purple-600'
-    }
+
   ];
 
   return (
@@ -41,8 +35,8 @@ const ContactDetails = () => {
         <div className="space-y-6">
           {contacts.map((contact, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
+              <div className="flex sm:flex-row flex-col sm:items-center sm:justify-between gap-4">
+                <div className="flex sm:flex-row flex-col sm:items-center gap-4">
                   <div className={`w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4`}>
                     <contact.icon className="w-6 h-6 text-white" />
                   </div>
@@ -54,9 +48,10 @@ const ContactDetails = () => {
                 
                 <a
                   href={contact.action}
+                  target='_blank'
                   className={`bg-black text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                 >
-                  Contact
+                  {index == 0 ? 'Call Now ' : 'Sent Email'}
                 </a>
               </div>
             </div>

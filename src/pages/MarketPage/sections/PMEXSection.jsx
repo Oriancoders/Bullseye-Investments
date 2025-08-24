@@ -10,7 +10,7 @@ const PMEXSection = () => {
   ];
 
   return (
-    <section id="pmex" className="py-20 bg-white">
+    <section id="PMEX" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-8">

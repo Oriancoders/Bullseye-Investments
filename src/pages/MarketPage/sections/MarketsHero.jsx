@@ -2,11 +2,21 @@ import React from 'react';
 import { TrendingUp, BarChart3 } from 'lucide-react';
 
 const MarketsHero = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    const offset = 80; // 👈 yeh navbar height ke barabar ya thoda zyada rakho
+
+    if (section) {
+      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="text-center">
           {/* Badge */}
@@ -24,13 +34,13 @@ const MarketsHero = () => {
 
           {/* Subheading */}
           <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive market insights, live data, and educational resources to help you 
+            Comprehensive market insights, live data, and educational resources to help you
             understand and navigate Pakistan's financial markets with confidence.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-12 py-4 text-lg font-bold hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[200px]">
+            <button onClick={() => scrollToSection("marketssnaps")} className="bg-gradient-to-r from-green-500 to-green-600 text-white px-12 py-4 text-lg font-bold hover:from-green-400 hover:to-green-500 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[200px]">
               <TrendingUp className="w-5 h-5 inline-block mr-2" />
               Explore Markets
             </button>

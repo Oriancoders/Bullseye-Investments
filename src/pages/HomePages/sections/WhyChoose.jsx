@@ -26,10 +26,10 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black  via-black to-black/40 min-h-screen">
+    <section className="py-20 bg-gradient-to-br from-black  via-black to-black/80 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Why Investors Trust Us
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

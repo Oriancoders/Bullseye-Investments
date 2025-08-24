@@ -12,7 +12,7 @@ export const useGlobalContext = () => {
 export const GlobalProvider = ({ children }) => {
     // Example of global state (You can add more states as needed)
 
-
+   
     const [scrwidth, setWidth] = useState(window.innerWidth);
     const [activePage , setActivePage] = useState("Home")
 
@@ -35,7 +35,6 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             scrwidth,
-            activePage , setActivePage
         }}>
             {children}
         </GlobalContext.Provider>

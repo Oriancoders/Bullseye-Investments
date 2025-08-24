@@ -2,6 +2,16 @@ import React from 'react';
 import { TrendingUp, TrendingDown, BarChart3, DollarSign, Coins } from 'lucide-react';
 
 const MarketSnapshot= () => {
+  const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  const offset = 80; // 👈 yeh navbar height ke barabar ya thoda zyada rakho
+
+  if (section) {
+    const top = section.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+};
+
   const markets = [
     {
       icon: BarChart3,
@@ -36,7 +46,7 @@ const MarketSnapshot= () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id='marketssnaps' className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
@@ -76,7 +86,7 @@ const MarketSnapshot= () => {
                   </div>
                 </div>
                 
-                <button className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                <button  onClick={() => scrollToSection(market.name)} className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
                   Learn More
                 </button>
               </div>

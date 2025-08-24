@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Navigation from '../../commonComps/Navigation'
 import Footer from '../../commonComps/Footer'
 import MarketsHero from './sections/MarketsHero'
@@ -12,6 +12,7 @@ import MarketTools from './sections/MarketTools'
 import MarketCTA from './sections/MarketCTA'
 
 const MarketPage = () => {
+
   return (
     <div>
       <Navigation />
@@ -19,6 +20,7 @@ const MarketPage = () => {
       <MarketSnapshot/>
       <PSXSection/>
       <MarketHeatmap/>
+      
       <PMEXSection/>
       <ForexSection/>
       <MarketTools/>

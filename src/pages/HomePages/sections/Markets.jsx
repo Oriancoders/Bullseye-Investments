@@ -1,25 +1,24 @@
 import React from 'react';
-import { TrendingUp, BarChart3, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Markets = () => {
   const markets = [
     {
-      icon: TrendingUp,
+      image : 'https://dps.psx.com.pk/static/images/logo-200.png',
       name: 'PSX',
       fullName: 'Pakistan Stock Exchange',
       status: 'Live Trading',
       highlight: '+2.3% Today'
     },
     {
-      icon: BarChart3,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpeNz5FaHp2oqhQBoGrvx5ujwnaVDtK5osi6PjJn41shmR9rWpZYR_z56x4bAsFMfHPrg&usqp=CAU',
       name: 'PMEX',
       fullName: 'Pakistan Mercantile Exchange',
       status: 'Active Session',
       highlight: 'Gold: $2,045/oz'
     },
     {
-      icon: DollarSign,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnbGkl2svbiGGqEOfbe_655TmYwC2m7_Tqxg&s',
       name: 'Forex',
       fullName: 'Foreign Exchange',
       status: '24/5 Trading',
@@ -35,7 +34,6 @@ const Markets = () => {
           backgroundImage: `url(https://images.unsplash.com/photo-1716279083559-ffc3a863c457?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          // filter: 'blur(8px)',
         }}
       ></div>
 
@@ -54,12 +52,10 @@ const Markets = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {markets.map((market, index) => (
             <div key={index} className="bg-gray-gra p-8 hover:shadow-xl transition-all duration-300 group hover:transform hover:-translate-y-2 border-4 rounded-md bg-white">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mr-4 group-hover:bg-gray-800 transition-colors">
-                  <market.icon className="w-8 h-8 text-white" />
-                </div>
+              <div className="flex items-center mb-6 gap-2 text-black">
+                  <img src={market.image} className="w-16 h-16 text-white " />
                 <div>
-                  <div className="text-2xl font-bold text-black">{market.name}</div>
+                  <div className="text-2xl font-bold">{market.name}</div>
                   <div className="text-sm ">{market.fullName}</div>
                 </div>
               </div>

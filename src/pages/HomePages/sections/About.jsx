@@ -1,13 +1,14 @@
 import React from 'react';
 import { Shield, Award, Globe, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logos from '../../../utils/data/logos';
 
 const About = () => {
   const credentials = [
-    { icon: Shield, label: 'SECP', desc: 'Licensed' },
-    { icon: Award, label: 'PMEX', desc: 'Active Member' },
-    { icon: Globe, label: 'PSX', desc: 'Authorized' },
-    { icon: Users, label: 'KTrade', desc: 'Partner' }
+    { icon: logos.secp , label: 'SECP', desc: 'Licensed' },
+    { icon: logos.pmex, label: 'PMEX', desc: 'Active Member' },
+    { icon: logos.psx, label: 'PSX', desc: 'Authorized' },
+    { icon: logos.ktrade, label: 'KTrade', desc: 'Partner' }
   ];
 
   return (
@@ -36,8 +37,13 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {credentials.map((cred, index) => (
             <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-colors">
-                <cred.icon className="w-8 h-8 text-white" />
+              <div className="sm:w-40 sm:h-40 w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                {/* <img src={cred.icon} className="" /> */}
+                <div className='w-full h-full text-white' style={{
+                  backgroundImage : `url(${cred.icon})`,
+                  backgroundSize : 'contain',
+                  backgroundPosition : 'center'
+                }} />
               </div>
               <div className="font-bold text-black text-lg">{cred.label}</div>
               <div className="">{cred.desc}</div>
