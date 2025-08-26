@@ -17,13 +17,7 @@ const Markets = () => {
       status: 'Active Session',
       highlight: 'Gold: $2,045/oz'
     },
-    {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnbGkl2svbiGGqEOfbe_655TmYwC2m7_Tqxg&s',
-      name: 'Forex',
-      fullName: 'Foreign Exchange',
-      status: '24/5 Trading',
-      highlight: 'EUR/USD: 1.0875'
-    }
+
   ];
 
   return (
@@ -49,7 +43,7 @@ const Markets = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {markets.map((market, index) => (
             <div key={index} className="bg-gray-gra p-8 hover:shadow-xl transition-all duration-300 group hover:transform hover:-translate-y-2 border-4 rounded-md bg-white">
               <div className="flex items-center mb-6 gap-2 text-black">

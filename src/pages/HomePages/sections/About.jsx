@@ -8,8 +8,7 @@ const About = () => {
   const credentials = [
     { icon: logos.secp , label: 'SECP', desc: 'Licensed' },
     { icon: logos.pmex, label: 'PMEX', desc: 'Active Member' },
-    { icon: logos.psx, label: 'PSX', desc: 'Authorized' },
-    { icon: logos.ktrade, label: 'KTrade', desc: 'Partner' }
+    { icon: logos.psx, label: 'PSX', desc: 'In Process' },
   ];
 
   return (
@@ -35,7 +34,7 @@ const About = () => {
         </div>
 
         {/* Credentials */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {credentials.map((cred, index) => (
             <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="sm:w-40 sm:h-40 w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">

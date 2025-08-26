@@ -3,11 +3,7 @@ import { Clock, Shield, Eye, Building } from 'lucide-react';
 
 const WhyChoose = () => {
   const features = [
-    {
-      icon: Clock,
-      title: '30+ Years Experience',
-      description: 'Three decades of international financial expertise and market knowledge'
-    },
+
     {
       icon: Shield,
       title: 'SECP Licensed & PMEX Active',
@@ -37,7 +33,7 @@ const WhyChoose = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-100 transition-colors">

@@ -20,7 +20,7 @@ const AboutHero = () => {
               <span className="block text-gray-200">Financial Services</span>
             </h1>
             <p className="text-xl text-gray-100 mb-8 leading-relaxed">
-              Bullseye Insurance Broker Pvt. Ltd. is a Private Limited Company, duly incorporated under the Companies Act, 2017 with the Securities and Exchange Commission of Pakistan (SECP).
+              Bullseye Insurance Broker Pvt. Ltd. is a Private Limited Company, duly incorporated under the Companies Act, 2025 with the Securities and Exchange Commission of Pakistan (SECP).
 
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

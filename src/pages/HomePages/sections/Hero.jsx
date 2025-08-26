@@ -30,26 +30,34 @@ const Hero = () => {
         <div className="sm:text-center">
           {/* Badge */}
           <motion.div
-          variants={fadeInUp}
-          className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+            variants={fadeInUp}
+            initial="hidden"   // 👈 start from hidden
+            animate="visible"  // 👈 animate to visible (on mount)
+            className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
             <Shield className="w-4 h-4 text-white mr-2" />
             <span className="text-white text-sm font-medium ">SECP Licensed & PMEX Active</span>
           </motion.div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <motion.h1  variants={fadeInUp}
+            initial="hidden"   // 👈 start from hidden
+            animate="visible"
+             className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="">Diversified</span>
             <br />
             <span className="font-semibold">Financial Services</span>
             <br />
             <span className="">with Global Vision</span>
-          </h1>
+          </motion.h1>
 
           {/* Subheading */}
-          <p className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
+          <motion.p  variants={fadeInUp}
+            initial="hidden"   // 👈 start from hidden
+            animate="visible"
+             className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
             30+ years of international expertise in commodities, stocks, insurance, forex, and real estate.
             Your trusted partner for comprehensive financial solutions.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -63,7 +71,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-20 mt-10 pt-12 border-t border-white/20">
+          <div  className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-20 mt-10 pt-12 border-t border-white/20">
             <div className="text-center">
               <div className=" text-3xl   font-bold text-white mb-2">30+</div>
               <div className="text-white">Years Experience</div>

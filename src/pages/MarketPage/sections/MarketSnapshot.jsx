@@ -33,16 +33,7 @@ const MarketSnapshot= () => {
       trend: 'up',
       color: 'from-yellow-500 to-orange-500'
     },
-    {
-      icon: DollarSign,
-      name: 'Forex',
-      fullName: 'Foreign Exchange',
-      description: 'Currency pairs and FX trading',
-      value: '1.0875',
-      change: '-0.15%',
-      trend: 'down',
-      color: 'from-green-500 to-green-600'
-    }
+
   ];
 
   return (
@@ -57,7 +48,7 @@ const MarketSnapshot= () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {markets.map((market, index) => (
             <div key={index} className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               {/* Icon */}

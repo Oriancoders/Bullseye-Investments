@@ -22,7 +22,7 @@ const MarketPage = () => {
       <MarketHeatmap/>
       
       <PMEXSection/>
-      <ForexSection/>
+      {/* <ForexSection/> */}
       <MarketTools/>
       {/* <MarketFAQ/> */}
       <MarketCTA/>
