@@ -12,7 +12,7 @@ const AboutPage = () => {
     <div className='overflow-x-hidden'>
       <Navigation/>
         <AboutHero/>
-        <Timeline/>
+        {/* <Timeline/> */}
         <MissionVision/>
         <TeamCTA/>
         <SponsorsSection/>

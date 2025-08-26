@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, Award, Globe, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logos from '../../../utils/data/logos';
+import about_pic from '../../../assets/about_pic.png'
 
 const About = () => {
   const credentials = [
@@ -30,7 +31,7 @@ const About = () => {
           </p>
         </div>
 
-        <img src="https://floretcapitals.com/wp-content/uploads/2025/07/stock-scaled-e1752190437413.png" alt="" className='md:w-1/2 w-full ' />
+        <img src={about_pic} alt="" className='md:w-1/2 w-full ' />
         </div>
 
         {/* Credentials */}

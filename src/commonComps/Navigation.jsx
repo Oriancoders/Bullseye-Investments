@@ -38,13 +38,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-white shadow-lg text-black' : 'sm:bg-transparent bg-white sm:text-white text-black'
-      }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+    <nav className={`fixed w-full z-50 transition-all duration-300  ${isScrolled ? 'bg-white shadow-lg text-black' : 'sm:bg-transparent  sm:text-white text-black'}`}>
+      <div className="max-w-7xl mx-auto ">
+        <div className="flex justify-between items-center px-6 lg:px-8 py-4">
           {/* Logo */}
           <Link to={"/"} className="flex-shrink-0">
-            <img src={logoblack} alt="" className='w-40' />
+            <img src={isScrolled ? logoblack : whitelogo} alt="" className='w-40' />
           </Link>
 
           {/* Desktop Navigation */}
@@ -111,7 +110,7 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${isScrolled ? 'text-black' : ' sm:text-white text-black'} transition-colors`}
+              className={`${isScrolled ? 'text-black' : 'text-white '} transition-colors`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -120,7 +119,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 ">
+          <div className="lg:hidden mt-4 px-6 lg:px-8 py-4 bg-white">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) =>
                 !item.submenu ? (
