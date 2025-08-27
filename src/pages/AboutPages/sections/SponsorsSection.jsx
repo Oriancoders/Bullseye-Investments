@@ -16,7 +16,7 @@ const sponsors = [
 
 function SponsorsSection() {
   return (
-    <section className="py-10 bg-gradient-to-b from-gray-200 via-gray-100 to-white">
+    <section className="py-20 bg-gradient-to-b from-gray-200 via-gray-100 to-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
 
@@ -28,7 +28,7 @@ function SponsorsSection() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div load="lazy" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left → Donut Chart */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -38,7 +38,7 @@ function SponsorsSection() {
             className=" "
           >
 
-            <ResponsiveContainer width="100%" height={280}>
+            <ResponsiveContainer  width="100%" height={280}>
               <PieChart>
                 <Pie
                   data={data}
