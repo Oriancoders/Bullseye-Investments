@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock, Shield, Eye, Building } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const WhyChoose = () => {
   const features = [
@@ -23,19 +24,20 @@ const WhyChoose = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-black  via-black to-black/80 min-h-screen">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 data-aos="fade-down" className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Why Investors Trust Us
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p data-aos="fade-up" className="text-xl text-gray-300 max-w-3xl mx-auto">
             Built on decades of experience, regulatory compliance, and unwavering commitment to our clients
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div data-aos="zoom-in" key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-100 transition-colors">
                 <feature.icon className="w-8 h-8 text-black" />
               </div>

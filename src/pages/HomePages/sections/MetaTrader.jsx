@@ -1,5 +1,6 @@
 import React from 'react';
 import { Monitor, Smartphone, Download } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const MetaTrader = () => {
   const platforms = [
@@ -10,6 +11,7 @@ const MetaTrader = () => {
 
   return (
     <section className="py-20 bg-black relative">
+      <AOSInitializer/>
       <span style={{
                 width: 1000,
                 height: 1000,
@@ -30,10 +32,10 @@ const MetaTrader = () => {
      
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="text-4xl lg:text-5xl font-bold text-white mb-6">MetaTrader 4 & 5</div>
+          <div data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-white mb-6">MetaTrader 4 & 5</div>
 
           
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-12">
+          <p data-aos="fade-up" className="text-xl text-gray-100 max-w-3xl mx-auto mb-12">
             Start trading instantly with industry-standard MetaTrader platforms. 
             Advanced charting, automated trading, and real-time market data at your fingertips.
           </p>
@@ -41,7 +43,7 @@ const MetaTrader = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {platforms.map((platform, index) => (
-            <div key={index} className="text-center p-8 border border-white hover:border-gray-900 transition-all duration-300 group">
+            <div data-aos="zoom-in" key={index} className="text-center p-8 border border-white hover:border-gray-900 transition-all duration-300 group">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-100 transition-colors">
                 <platform.icon className="w-8 h-8 text-black" />
               </div>

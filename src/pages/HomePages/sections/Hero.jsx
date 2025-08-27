@@ -4,6 +4,7 @@ import heroBG from '../../..//assets/heroBG.jpg'
 import { motion } from 'framer-motion';
 import { fadeInUp } from '../../../utils/animations';
 import { Link } from 'react-router-dom';
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
 
 const Hero = () => {
   return (
@@ -39,10 +40,10 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1  variants={fadeInUp}
+          <motion.h1 variants={fadeInUp}
             initial="hidden"   // 👈 start from hidden
             animate="visible"
-             className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="">Diversified</span>
             <br />
             <span className="font-semibold">Financial Services</span>
@@ -51,10 +52,11 @@ const Hero = () => {
           </motion.h1>
 
           {/* Subheading */}
-          <motion.p  variants={fadeInUp}
+          <motion.p
+            variants={fadeInUp}
             initial="hidden"   // 👈 start from hidden
             animate="visible"
-             className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
+            className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
             30+ years of international expertise in commodities, stocks, insurance, forex, and real estate.
             Your trusted partner for comprehensive financial solutions.
           </motion.p>
@@ -65,25 +67,42 @@ const Hero = () => {
               <TrendingUp className="w-5 h-5 inline-block mr-2" />
               Explore Services
             </Link>
-            <button className="px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
+            <a href={ACCOUNTURL} target='_blank' className="px-8 py-4 border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform sm:hover:scale-105 min-w-[200px] sm:w-fit w-full">
               Open Account
-            </button>
+            </a>
           </div>
 
           {/* Stats */}
-          <div  className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-20 mt-10 pt-12 border-t border-white/20">
-            <div className="text-center">
-              <div className=" text-3xl   font-bold text-white mb-2">30+</div>
-              <div className="text-white">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className=" text-3xl   font-bold text-white mb-2">5</div>
-              <div className="text-white">Service Sectors</div>
-            </div>
-            <div className="text-center">
-              <div className=" text-3xl   font-bold text-white mb-2">100%</div>
-              <div className="text-white">SECP Compliant</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mt-20 mt-10 pt-12 border-t border-white/20">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2 , delay : 0.2}}
+              viewport={{ once: true, amount: 0.2 }}
+              className="text-center">
+              <div className=" text-3xl font-bold text-white mb-2">2025</div>
+              <div className="text-white">Founded Year</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2 , delay : 0.5}}
+              viewport={{ once: true, amount: 0.2 }}
+              className="text-center">
+              <div className=" text-3xl font-bold text-white mb-2">100%</div>
+              <div className="text-white">SECP Licensed</div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2 , delay : 1}}
+              viewport={{ once: true, amount: 0.2 }}
+              className="text-center">
+              <div className=" text-3xl font-bold text-white mb-2">Global</div>
+              <div className="text-white">Financial Outlook</div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -1,33 +1,46 @@
 import React from 'react';
-import { CheckCircle, FileText, ExternalLink } from 'lucide-react';
+import {  FileText, MousePointerClick, UserPlus, MailCheck, Award } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const OpenAccount = () => {
   const steps = [
     {
-      icon: CheckCircle,
-      title: 'Choose Market',
-      description: 'Select from PSX stocks, PMEX commodities, or Forex trading'
+      icon: MousePointerClick, // or any relevant icon
+      title: 'Press Open an Account',
+      description: 'Begin your trading journey by clicking on the "Open an Account" button to get started effortlessly.'
+    },
+    {
+      icon: UserPlus,
+      title: 'Click Register Now',
+      description: 'Select "Register Now" to initiate the sign-up process.'
     },
     {
       icon: FileText,
-      title: 'Fill Application',
-      description: 'Complete our secure online form with your details'
+      title: 'Fill in the Account Opening Form',
+      description: 'Complete the account opening form with your personal and financial details to create your profile.'
     },
     {
-      icon: ExternalLink,
-      title: 'Get Started',
-      description: 'Redirect to official PSX/PMEX portals for final verification'
+      icon: MailCheck,
+      title: 'Email, OTP & PMEX Backoffice Verification',
+      description: 'Verify your email & OTP, followed by PMEX backoffice confirmation.'
+    },
+    {
+      icon: Award,
+      title: 'Congratulations! You are Now a Registered Trader',
+      description: 'Welcome aboard! You are officially a registered trader, ready to explore and trade in the markets.'
     }
   ];
 
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-400 via-white to-white text-Dar">
+    <section className="py-20 bg-gradient-to-br from-gray-300 via-white to-white text-Dar">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col justify-center items-center">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos= "fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Open Your Account
           </h2>
-          <p className="text-xl  max-w-3xl mx-auto">
+          <p data-aos= "fade-up" className="text-xl  max-w-3xl mx-auto">
             Start your investment journey in just three simple steps
           </p>
         </div>
@@ -35,21 +48,18 @@ const OpenAccount = () => {
         <div className="relative">
           {/* Connection Lines */}
           <div className="hidden md:block absolute top-24 left-1/2 transform -translate-x-1/2 w-2/3 h-px bg-gray-300"></div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <div className="flex sm:flex-row flex-col justify-center items-center flex-wrap gap-12">
             {steps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                {/* Step Number */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold">
-                  {index + 1}
-                </div>
-                
+              <div data-aos= "fade-up" key={index} className="text-center relative max-w-[300px]  min-h-72">
+
+
                 {/* Icon */}
                 <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-black hover:text-white transition-all duration-300 group">
                   <step.icon className="w-10 h-10 text-black group-hover:text-white transition-colors" />
                 </div>
-                
-                <h3 className="text-2xl font-bold text-black mb-4">{step.title}</h3>
+
+                <h3 className="text-2xl font-bold text-black mb-4"> {index + 1} : {step.title}</h3>
                 <p className=" leading-relaxed ">{step.description}</p>
               </div>
             ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const Markets = () => {
   const markets = [
@@ -22,6 +23,7 @@ const Markets = () => {
 
   return (
     <section className="py-20  text-white relative">
+      <AOSInitializer/>
       <div
         className="absolute w-full h-full top-0 left-0 z-0"
         style={{
@@ -35,17 +37,17 @@ const Markets = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
 
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold  mb-6">
+          <h2 data-aos = "fade-up" className="text-4xl lg:text-5xl font-bold  mb-6">
             Markets Snapshot
           </h2>
-          <p className="text-xl max-w-3xl mx-auto">
+          <p data-aos = "fade-up" className="text-xl max-w-3xl mx-auto">
             Real-time access to Pakistan's leading exchanges and global forex markets
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {markets.map((market, index) => (
-            <div key={index} className="bg-gray-gra p-8 hover:shadow-xl transition-all duration-300 group hover:transform hover:-translate-y-2 border-4 rounded-md bg-white">
+            <div data-aos = {index == 0 ?  'fade-right' : 'fade-left' } key={index} className="bg-gray-gra p-8  transition-all duration-300 group  hover:-translate-y-2 border-4 rounded-md bg-white">
               <div className="flex items-center mb-6 gap-2 text-black">
                   <img src={market.image} className="w-16 h-16 text-white " />
                 <div>

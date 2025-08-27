@@ -11,7 +11,7 @@ import FAQs from './pages/FAQs/FAQs';
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden font-lato">
+    <div className=" overflow-x-hidden font-lato">
       <Routes>
         <Route path='/' element={<Home/>}  />
         <Route path='/About' element={<AboutPage/>}  />

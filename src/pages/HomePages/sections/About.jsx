@@ -1,8 +1,8 @@
 import React from 'react';
-import { Shield, Award, Globe, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logos from '../../../utils/data/logos';
 import about_pic from '../../../assets/about_pic.png'
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const About = () => {
   const credentials = [
@@ -13,30 +13,31 @@ const About = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-white via-white to-gray-200">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className='flex md:flex-row flex-col justify-between items-center gap-6 mb-16'>
-<div className="text-left ">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+      <div className="text-left ">
+          <h2 data-aos = "fade-right" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             About Bullseye
           </h2>
-          <p className="text-xl  max-w-4xl mx-auto leading-relaxed mb-8">
+          <p data-aos = "fade-right" data-aos-delay="100" className="text-xl  max-w-4xl mx-auto leading-relaxed mb-8">
             We are a diversified financial services company with over three decades of international experience. 
             Our comprehensive platform offers trading, investment, insurance, and real estate services under one roof, 
             all backed by proper regulatory compliance and ethical practices.
           </p>
-          <p className="text-xl  max-w-3xl mx-auto mb-12">
+          <p data-aos = "fade-right" data-aos-delay="300" className="text-xl  max-w-3xl mx-auto mb-12">
             As a SECP-licensed entity with active PMEX membership, we provide our clients with secure, 
             transparent, and professional financial services across multiple markets and asset classes.
           </p>
         </div>
 
-        <img src={about_pic} alt="" className='md:w-1/2 w-full ' />
+        <img data-aos = "fade-left"  src={about_pic} alt="" className='md:w-1/2 w-full ' />
         </div>
 
         {/* Credentials */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        <div  className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {credentials.map((cred, index) => (
-            <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div data-aos = "fade-up" data-aos-delay={`${index * 100}s`} key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
               <div className="sm:w-40 sm:h-40 w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
                 {/* <img src={cred.icon} className="" /> */}
                 <div className='w-full h-full text-white' style={{
