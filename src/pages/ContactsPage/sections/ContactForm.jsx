@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 
 const ContactForm= () => {
@@ -10,6 +10,8 @@ const ContactForm= () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
+  const [isSending, setIsSending] = useState(false); // NEW
+  const formRef = useRef();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,17 +21,32 @@ const ContactForm= () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Placeholder for backend integration
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ fullName: '', email: '', phone: '', message: '' });
-    }, 3000);
+    setIsSending(true); // NEW
+    try {
+      const data = new FormData();
+      data.append('fullName', formData.fullName);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('message', formData.message);
+
+      await fetch('https://script.google.com/macros/s/AKfycbxD3NnaHlP7GumDb8lzYXPbfOuLKSCPaZCKEmEyBJ1hK6IdfYhA-nCSCYdUp5w5IlwglA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data, // send as FormData; no headers
+      });
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ fullName: '', email: '', phone: '', message: '' });
+      }, 3000);
+    } catch (error) {
+      alert('Failed to send. Please try again.');
+    } finally {
+      setIsSending(false); // NEW
+    }
   };
 
   if (isSubmitted) {
@@ -63,7 +80,7 @@ const ContactForm= () => {
         </div>
 
         <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" ref={formRef}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative">
                 <input
@@ -140,10 +157,11 @@ const ContactForm= () => {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-lg text-lg font-bold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center"
+              disabled={isSending} // NEW
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-lg text-lg font-bold hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Send className="w-5 h-5 mr-2" />
-              Send Message
+              {isSending ? 'Sending...' : 'Send Message'} {/* NEW */}
             </button>
           </form>
         </div>

@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 import { Link } from 'react-router-dom';
 
 const ContactHero = () => {
+    const [isSending, setIsSending] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSending(true);
+        try {
+            const form = e.target;
+            const first = form.first_name?.value?.trim() || '';
+            const last = form.last_name?.value?.trim() || '';
+            const fullName = [first, last].filter(Boolean).join(' ');
+            const phone = form.phone?.value?.trim() || '';
+            const message = form.message?.value?.trim() || '';
+
+            const data = {
+                fullName,
+                email: '', // optional: add an email input if your script requires it
+                phone,
+                message,
+            };
+
+            await fetch('https://script.google.com/macros/s/AKfycbxD3NnaHlP7GumDb8lzYXPbfOuLKSCPaZCKEmEyBJ1hK6IdfYhA-nCSCYdUp5w5IlwglA/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            alert('Message sent successfully ✅');
+            form.reset();
+        } catch (err) {
+            console.error(err);
+            alert('Failed to send message ❌');
+        } finally {
+            setIsSending(false);
+        }
+    };
+
     return (
         <section id='contactHero' className=" bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10">
             <AOSInitializer/>
@@ -33,25 +72,10 @@ const ContactHero = () => {
                     {/* Right Visual */}
                     <div className="relative animate-slide-up">
                         <div data-aos="fade-left" className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
-                            {/* Contact Form (VIP) */}
+                            {/* Contact Form (Google Sheet) */}
                             <form
                                 className="flex flex-col gap-6"
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                    // EmailJS integration (replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY)
-                                    window.emailjs.sendForm(
-                                        "YOUR_SERVICE_ID",
-                                        "YOUR_TEMPLATE_ID",
-                                        e.target,
-                                        "YOUR_PUBLIC_KEY"
-                                    ).then(() => {
-                                        alert("Message sent successfully ✅");
-                                        e.target.reset();
-                                    }).catch((err) => {
-                                        console.error(err);
-                                        alert("Failed to send message ❌");
-                                    });
-                                }}
+                                onSubmit={handleSubmit}
                             >
                                 {/* First + Last Name Row */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -92,9 +116,10 @@ const ContactHero = () => {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full py-3 rounded-xl font-semibold text-lg bg-gradient-to-r from-white via-gray-200 to-white text-black shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                    disabled={isSending}
+                                    className="w-full py-3 rounded-xl font-semibold text-lg bg-gradient-to-r from-white via-gray-200 to-white text-black shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    Send Message
+                                    {isSending ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
 
