@@ -1,56 +1,62 @@
 import { Shield, Award, Building, CheckCircle } from 'lucide-react';
-
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
+import { motion } from 'framer-motion';
+import logos from '../../../utils/data/logos';
 const TrustCompliance = () => {
   const credentials = [
     {
-      icon: Shield,
+      icon: logos.secp,
       name: 'SECP',
       fullName: 'Securities & Exchange Commission of Pakistan',
       status: 'Registered & Licensed',
       description: 'Full regulatory compliance for investor protection'
     },
     {
-      icon: Award,
+      icon: logos.pmex,
       name: 'PMEX',
       fullName: 'Pakistan Mercantile Exchange',
       status: 'Active Member',
       description: 'Direct access to commodities trading markets'
     },
     {
-      icon: Building,
+      icon: logos.psx,
       name: 'PSX',
       fullName: 'Pakistan Stock Exchange',
       status: 'Application Submitted',
       description: 'Expanding our stock trading capabilities'
     },
-    {
-      icon: CheckCircle,
-      name: 'Insurance',
-      fullName: 'Insurance & Real Estate',
-      status: 'Licensed Provider',
-      description: 'Comprehensive financial services licensing'
-    }
+
   ];
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <AOSInitializer/>
+      <div  className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up"  className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Trust & Compliance
           </h2>
-          <p className="text-xl text-gray-900 max-w-3xl mx-auto">
+          <p data-aos="fade-up"  className="text-xl text-gray-900 max-w-3xl mx-auto">
             Our regulatory credentials and licensing ensure your investments are protected 
             and managed according to the highest industry standards.
           </p>
         </div>
 
         {/* Credentials Grid - Law of Proximity */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1  md:grid-cols-3 gap-8 mb-16">
           {credentials.map((credential, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-black">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                <credential.icon className="w-8 h-8 text-white" />
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.4 , ease : 'easeInOut'}}
+              viewport={{ once: true }}  key={index} className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-black">
+              <div className="sm:w-40 sm:h-40 w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                {/* <img src={cred.icon} className="" /> */}
+                <div className='w-full h-full text-white' style={{
+                  backgroundImage : `url(${credential.icon})`,
+                  backgroundSize : 'contain',
+                  backgroundPosition : 'center'
+                }} />
               </div>
               
               <h3 className="text-2xl font-bold text-black mb-2">{credential.name}</h3>
@@ -61,12 +67,12 @@ const TrustCompliance = () => {
               </div>
               
               <p className="text-gray-900 text-sm leading-relaxed">{credential.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Additional Trust Elements */}
-        <div className="bg-white rounded-2xl md:shadow-xl md:p-12 sm:p-6 p-4 text-center border border-gray-200">
+        <div className="bg-white rounded-2xl md:shadow-sm md:p-12 sm:p-6 p-4 text-center border border-gray-200">
           <h3 className="text-3xl font-bold text-black mb-6">Your Security is Our Priority</h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             We maintain the highest standards of regulatory compliance, data security, and client fund protection. 
@@ -79,8 +85,8 @@ const TrustCompliance = () => {
               <div className="text-gray-600">Regulatory Compliant</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-black mb-2">30+</div>
-              <div className="text-gray-600">Years of Trust</div>
+              <div className="text-3xl font-bold text-black mb-2">SECP</div>
+              <div className="text-gray-600"> Registered </div>
             </div>
             <div>
               <div className="text-3xl font-bold text-black mb-2">24/7</div>

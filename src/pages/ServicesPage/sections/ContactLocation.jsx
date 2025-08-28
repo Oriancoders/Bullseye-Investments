@@ -1,7 +1,8 @@
 import React from 'react';
 import {  Phone, Mail,  } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa";
-
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
+import { motion } from 'framer-motion';
 
 const ContactLocation = () => {
   const contactMethods = [
@@ -30,12 +31,13 @@ const ContactLocation = () => {
 
   return (
     <section className="py-20 bg-white">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Contact & Location
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p data-aos="fade-up"  className="text-xl text-gray-600 max-w-3xl mx-auto">
             Get in touch with our expert team. We're here to help you start your investment journey.
           </p>
         </div>
@@ -44,11 +46,16 @@ const ContactLocation = () => {
 
 
           {/* Map Placeholder - Quick Location Recognition */}
-          <div className="h-fit bg-gray-100 rounded-lg overflow-hidden  flex  flex-col    relative">
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3 , ease : 'easeInOut'}}
+              viewport={{ once: true }} className="h-fit bg-gray-50 rounded-lg overflow-hidden  flex  flex-col    relative">
 
-            <div className="relative w-full h-0 pb-[70%] overflow-hidden rounded-lg">
+            <div className="relative  w-full h-0 pb-[70%] overflow-hidden rounded-lg">
+ 
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57937.00315969949!2d66.95420112167969!3d24.8275294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d77a1325ad9%3A0xe0219b59ff25b721!2sBalad%20Trade%20Center-III%20(BTC-3)!5e0!3m2!1sen!2suk!4v1755870379000!5m2!1sen!2suk"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.193312546269!2d67.3072514!3d25.027512899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34b041c38af57%3A0x1d07ef7dc92ce768!2sHead%20Office%20Bahria%20Town%20Karachi.!5e0!3m2!1sen!2suk!4v1756386744017!5m2!1sen!2suk"
                 className="absolute top-0 left-0 w-full h-full border-0"
                 allowFullScreen=""
                 loading="lazy"
@@ -58,7 +65,7 @@ const ContactLocation = () => {
             </div>
 
 
-            <div className="flex items-start  bg-white z-20 w-full p-5">
+            <div  className="flex items-start  z-20 w-full p-5">
               <div>
                 <h4 className="text-xl font-bold mb-3">Head Office</h4>
                 <p className=" leading-relaxed">
@@ -68,9 +75,13 @@ const ContactLocation = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="h-fit bg-gray-100 rounded-lg overflow-hidden flex  flex-col    relative">
+          <motion.div initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 , ease : 'easeInOut'}}
+              viewport={{ once: true }}
+                className="h-fit bg-gray-50 rounded-lg overflow-hidden flex  flex-col    relative">
 
             <div className="relative w-full h-0 pb-[70%] overflow-hidden rounded-lg">
               <iframe
@@ -92,16 +103,21 @@ const ContactLocation = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Contact Methods - Law of Proximity */}
         <div className=" grid md:grid-cols-3 grid-cols-1 mt-6">
 
           {contactMethods.map((method, index) => (
-            <div key={index} className="group bg-gray-50 rounded-lg p-6  transition-all duration-300 transform ">
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.4 , ease : 'easeInOut'}}
+              viewport={{ once: true }}
+            key={index} className=" bg-gray-50 rounded-lg p-6  transform ">
               <div className="flex md:items-center sm:flex-row flex-col gap-4">
-                <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  transition-transform duration-300 `}>
+                <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  `}>
                   {method.icon}
                 </div>
 
@@ -112,7 +128,7 @@ const ContactLocation = () => {
 
 
               </div>
-            </div>
+            </motion.div>
           ))}
 
 
@@ -126,7 +142,7 @@ const ContactLocation = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div>
               <div className="font-semibold text-black mb-2">Trading Hours</div>
-              <div className="text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM</div>
+              <div className="text-gray-600">Full Week - 24/7</div>
             </div>
             <div>
               <div className="font-semibold text-black mb-2">Support Available</div>

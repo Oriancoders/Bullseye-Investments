@@ -1,28 +1,35 @@
-import React from 'react'
-import Navigation from '../../commonComps/Navigation'
-import Footer from '../../commonComps/Footer'
-import RegisteredAgents from './sections/RegisteredAgents'
-import AddressSection from './sections/AddressSection'
-import ContactDetails from './sections/ContactDetails'
-import InvestorComplaints from './sections/InvestorComplaints'
-import AuditorsLegal from './sections/AuditorsLegal'
-import PoliciesProcedures from './sections/PoliciesProcedures'
-import ContactForm from './sections/ContactForm'
-import ContactHero from './sections/ContactHero'
+import React, { lazy, Suspense, useEffect } from 'react'
+import Loader from '../../utils/Loader'
+
+const Navigation = lazy(() => import('../../commonComps/Navigation'))
+const FooterFinal = lazy(() => import('../../commonComps/FooterFinal'))
+const RegisteredAgents = lazy(() => import('./sections/RegisteredAgents'))
+const AddressSection = lazy(() => import('./sections/AddressSection'))
+const ContactDetails = lazy(() => import('./sections/ContactDetails'))
+const InvestorComplaints = lazy(() => import('./sections/InvestorComplaints'))
+const AuditorsLegal = lazy(() => import('./sections/AuditorsLegal'))
+const PoliciesProcedures = lazy(() => import('./sections/PoliciesProcedures'))
+const ContactHero = lazy(() => import('./sections/ContactHero'))
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className='overflow-x-hidden'>
-      <Navigation/>
-        <ContactHero/>
-        {/* <RegisteredAgents/> */}
-        <AddressSection/>
-        <ContactDetails/>
-        <InvestorComplaints/>
-        <AuditorsLegal/>
-        <PoliciesProcedures/>
-        {/* <ContactForm/> */}
-      <Footer/>
+      <Suspense fallback={<Loader />}>
+        <Navigation />
+        <ContactHero />
+        {/* <RegisteredAgents /> */}
+        <AddressSection />
+        <ContactDetails />
+        <InvestorComplaints />
+        <AuditorsLegal />
+        <PoliciesProcedures />
+        {/* <ContactForm /> */}
+        <FooterFinal />
+      </Suspense>
     </div>
   )
 }

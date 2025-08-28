@@ -1,30 +1,39 @@
-import React from 'react'
-import Navigation from '../../commonComps/Navigation'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Services from './sections/Services'
-import WhyChoose from './sections/WhyChoose'
-import Markets from './sections/Markets'
-import Education from './sections/Education'
-import OpenAccount from './sections/OpenAccount'
-import MetaTrader from './sections/MetaTrader'
-import Contact from './sections/Contact'
-import Footer from '../../commonComps/Footer'
+import React, { lazy, Suspense, useEffect } from 'react'
+import Loader from '../../utils/Loader'
+// Lazy load all components
+const Navigation = lazy(() => import('../../commonComps/Navigation'))
+const Hero = lazy(() => import('./sections/Hero'))
+const About = lazy(() => import('./sections/About'))
+const Services = lazy(() => import('./sections/Services'))
+const WhyChoose = lazy(() => import('./sections/WhyChoose'))
+const Markets = lazy(() => import('./sections/Markets'))
+const Education = lazy(() => import('./sections/Education'))
+const OpenAccount = lazy(() => import('./sections/OpenAccount'))
+const MetaTrader = lazy(() => import('./sections/MetaTrader'))
+const Contact = lazy(() => import('./sections/Contact'))
+const FooterFinal = lazy(() => import('../../commonComps/FooterFinal'))
+
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className='overflow-x-hidden'>
-      <Navigation />
-      <Hero />
-      <About />
-      <Services />
-      <WhyChoose />
-      <Markets />
-      <Education />
-      <OpenAccount />
-      <MetaTrader />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<Loader />}>
+        <Navigation />
+        <Hero />
+        <About />
+        <Services />
+        <WhyChoose />
+        <Markets />
+        <Education />
+        <OpenAccount />
+        <MetaTrader />
+        <Contact />
+        <FooterFinal />
+      </Suspense>
     </div>
   )
 }

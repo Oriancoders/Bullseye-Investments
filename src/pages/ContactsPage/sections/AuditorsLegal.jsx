@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText, Scale } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const AuditorsLegal = () => {
   const advisors = [
@@ -19,19 +20,20 @@ const AuditorsLegal = () => {
 
   return (
     <section className="py-20 bg-gray-50">
+      <AOSInitializer/>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Auditors & Legal Advisors
           </h2>
-          <p className="text-xl text-gray-600">
+          <p data-aos="fade-up" className="text-xl text-gray-600">
             Professional partners ensuring compliance and transparency
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {advisors.map((advisor, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div data-aos="fade-up" key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4 group-hover:bg-gray-800 transition-colors">
                   <advisor.icon className="w-6 h-6 text-white" />

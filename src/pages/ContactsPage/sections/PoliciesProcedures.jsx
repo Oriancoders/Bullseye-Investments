@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Shield, Users, CheckCircle } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const PoliciesProcedures = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -28,19 +29,20 @@ const PoliciesProcedures = () => {
 
   return (
     <section className="py-20 bg-white">
+      <AOSInitializer/>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Policies & Procedures
           </h2>
-          <p className="text-xl text-gray-600">
+          <p data-aos="fade-up" className="text-xl text-gray-600">
             Our commitment to regulatory compliance and best practices
           </p>
         </div>
 
         <div className="space-y-4">
           {policies.map((policy, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+            <div data-aos="fade-up" key={index} className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <button
                 onClick={() => toggleAccordion(index)}
                 className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"

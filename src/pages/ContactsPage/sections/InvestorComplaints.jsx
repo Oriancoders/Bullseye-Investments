@@ -1,7 +1,16 @@
 import React from 'react';
 import { User, Phone, Mail, AlertCircle } from 'lucide-react';
-
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
+import { motion } from 'framer-motion';
 const InvestorComplaints = () => {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      const top = 0;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
   const officers = [
     {
       title: 'Designated Person',
@@ -22,13 +31,14 @@ const InvestorComplaints = () => {
 
   return (
     <section className="py-20 bg-white">
+      <AOSInitializer/>
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Investor Complaints
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p data-aos="fade-up" className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are committed to addressing your concerns promptly and professionally
           </p>
         </div>
@@ -36,21 +46,26 @@ const InvestorComplaints = () => {
         {/* Officers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {officers.map((officer, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+            <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.4 , ease : 'easeInOut'}}
+              viewport={{ once: true }}
+               key={index} className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
                 <User className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-bold text-black mb-2">{officer.title}</h3>
               <div className="text-xl font-semibold text-gray-800 mb-1">{officer.name}</div>
               <div className="text-gray-600 text-sm">{officer.role}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Contact Card with Animated Border */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-black rounded-2xl "></div>
-          <div className="relative bg-white rounded-2xl p-8 m-1 shadow-2xl">
+        <div data-aos="fade-in" className="relative">
+          <div  className="absolute inset-0 bg-black rounded-2xl "></div>
+          <div className="relative bg-white rounded-2xl p-8 m-1 shadow-sm">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-black mb-8">Contact for Complaints</h3>
               
@@ -72,7 +87,7 @@ const InvestorComplaints = () => {
                 </div>
               </div>
               
-              <button className="bg-black text-white px-12 py-4 text-lg font-bold rounded-lg hover:shadow-2xl hover:from-red-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105">
+              <button onClick={() => scrollToSection("contactHero")} className="bg-black text-white px-12 py-4 text-lg font-bold rounded-lg hover:shadow-2xl hover:from-red-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105">
                 Contact Now
               </button>
             </div>

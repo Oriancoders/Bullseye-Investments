@@ -1,30 +1,38 @@
-import React from 'react'
-import Navigation from '../../commonComps/Navigation'
-import Footer from '../../commonComps/Footer'
-import ServicesHero from './sections/ServicesHero'
-import ServicesGrid from './sections/ServicesGrid'
-import WhyChooseServices from './sections/WhyChooseServices'
-import ServicesCTA from './sections/ServicesCTA'
-import TrustCompliance from './sections/TrustCompliance'
-import ContactLocation from './sections/ContactLocation'
-import PremiumServices from './sections/PremiumServices'
-import AssociatedCompanies from './sections/AssociatedCompanies'
-import InvestorComplaints from './sections/InvestorsComplaints'
+import React, { lazy, Suspense, useEffect } from 'react'
+import Loader from '../../utils/Loader'
+
+const Navigation = lazy(() => import('../../commonComps/Navigation'))
+const ServicesHero = lazy(() => import('./sections/ServicesHero'))
+const WhyChooseServices = lazy(() => import('./sections/WhyChooseServices'))
+const ServicesCTA = lazy(() => import('./sections/ServicesCTA'))
+const TrustCompliance = lazy(() => import('./sections/TrustCompliance'))
+const ContactLocation = lazy(() => import('./sections/ContactLocation'))
+const PremiumServices = lazy(() => import('./sections/PremiumServices'))
+const AssociatedCompanies = lazy(() => import('./sections/AssociatedCompanies'))
+const InvestorComplaints = lazy(() => import('./sections/InvestorsComplaints'))
+const FooterFinal = lazy(() => import('../../commonComps/FooterFinal'))
+
+
 
 const ServicesPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className='overflow-x-hidden'>
-      <Navigation/>
-        <ServicesHero/>
-        <PremiumServices/>
-        <WhyChooseServices/>
-        <AssociatedCompanies/>
-        <InvestorComplaints/>
-        <ContactLocation/>
-        <ServicesCTA/>
-        <TrustCompliance/>
-
-      <Footer/>
+      <Suspense fallback={<Loader />}>
+        <Navigation />
+        <ServicesHero />
+        <PremiumServices />
+        <WhyChooseServices />
+        <AssociatedCompanies />
+        <InvestorComplaints />
+        <ContactLocation />
+        <ServicesCTA />
+        <TrustCompliance />
+        <FooterFinal />
+      </Suspense>
     </div>
   )
 }

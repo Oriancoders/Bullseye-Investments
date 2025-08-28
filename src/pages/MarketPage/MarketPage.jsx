@@ -1,33 +1,37 @@
-import React, { useRef } from 'react'
-import Navigation from '../../commonComps/Navigation'
-import Footer from '../../commonComps/Footer'
-import MarketsHero from './sections/MarketsHero'
-import MarketSnapshot from './sections/MarketSnapshot'
-import PSXSection from './sections/PSXSection'
-import PMEXSection from './sections/PMEXSection'
-import ForexSection from './sections/ForexSection'
-import MarketHeatmap from './sections/MarketHeatMap'
-import MarketTools from './sections/MarketTools'
-// import MarketFAQ from './sections/MarketFAQ'
-import MarketCTA from './sections/MarketCTA'
+import React, { Suspense, lazy, useEffect } from 'react'
+import Loader from '../../utils/Loader'
+// Lazy load all components
+const Navigation = lazy(() => import('../../commonComps/Navigation'))
+const FooterFinal = lazy(() => import('../../commonComps/FooterFinal'))
+const MarketsHero = lazy(() => import('./sections/MarketsHero'))
+const MarketSnapshot = lazy(() => import('./sections/MarketSnapshot'))
+const PSXSection = lazy(() => import('./sections/PSXSection'))
+const PMEXSection = lazy(() => import('./sections/PMEXSection'))
+const ForexSection = lazy(() => import('./sections/ForexSection'))
+const MarketHeatmap = lazy(() => import('./sections/MarketHeatMap'))
+const MarketTools = lazy(() => import('./sections/MarketTools'))
+const MarketCTA = lazy(() => import('./sections/MarketCTA'))
 
 const MarketPage = () => {
+  // Scroll to top on page mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
-    <div>
-      <Navigation />
-      <MarketsHero/>
-      <MarketSnapshot/>
-      <PSXSection/>
-      <MarketHeatmap/>
-      
-      <PMEXSection/>
-      {/* <ForexSection/> */}
-      <MarketTools/>
-      {/* <MarketFAQ/> */}
-      <MarketCTA/>
-      <Footer/>
-    </div>
+    <Suspense fallback={<Loader />}>
+      <div className="overflow-x-hidden">
+        <Navigation />
+        <MarketsHero />
+        <MarketSnapshot />
+        <PSXSection />
+        <MarketHeatmap />
+        <PMEXSection />
+        <MarketCTA />
+        <MarketTools />
+        <FooterFinal />
+      </div>
+    </Suspense>
   )
 }
 

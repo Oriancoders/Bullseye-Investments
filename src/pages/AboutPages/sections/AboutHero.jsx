@@ -38,7 +38,7 @@ const AboutHero = () => {
           </div>
 
           {/* Right Visual */}
-          <div data-aos="fade-in"  className="relative animate-slide-up ">
+          <div data-aos="fade-in"  className="relative ">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
  
 

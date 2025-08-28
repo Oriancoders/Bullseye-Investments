@@ -1,0 +1,18 @@
+/* change arrow color */
+.slick-prev:before,
+.slick-next:before {
+  color: #ffffff !important; /* orange */
+  font-size: 30px;
+}
+
+/* change active dot */
+.slick-dots li.slick-active button:before {
+  color: #ffffff !important; /* blue */
+  font-size: 12px;
+}
+
+/* change inactive dots */
+.slick-dots li button:before {
+  color: #fff !important; /* white */
+  opacity: 0.5;
+}

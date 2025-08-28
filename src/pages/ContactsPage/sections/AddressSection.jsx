@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building, MapPin } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const AddressSection = () => {
   const offices = [
@@ -19,12 +20,13 @@ const AddressSection = () => {
 
   return (
     <section className="py-20 bg-white">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Office Addresses
           </h2>
-          <p className="text-xl text-gray-600">
+          <p data-aos="fade-up" className="text-xl text-gray-600">
             Our official business locations
           </p>
         </div>
@@ -33,6 +35,7 @@ const AddressSection = () => {
           {offices.map((office, index) => (
             <div 
               key={index} 
+              data-aos={index == 0 ? 'fade-right' : 'fade-left'}
               className={`p-8 rounded-lg bg-black text-white transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 `}
             >
               <div className="flex items-center mb-6">

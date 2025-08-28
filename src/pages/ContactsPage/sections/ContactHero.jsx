@@ -1,37 +1,38 @@
 import React from 'react';
-import { TrendingUp, Globe, Target, Building, Calendar, ShieldCheck } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
+import { Link } from 'react-router-dom';
 
 const ContactHero = () => {
     return (
-        <section className=" bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10">
-
+        <section id='contactHero' className=" bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10">
+            <AOSInitializer/>
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className="animate-fade-in">
 
-                        <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        <h1 data-aos="fade-right" className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                             Get in Touch With
                             <span className="block text-gray-200">Bullseye Insurance Broker Pvt. Ltd.</span>
                         </h1>
 
-                        <p className="text-xl text-gray-100 mb-8 leading-relaxed">
+                        <p data-aos="fade-right" className="text-xl text-gray-100 mb-8 leading-relaxed">
                             We’re here to answer your queries, assist with investor complaints,
                             and guide you through our compliance policies. Reach out via phone,
-                            email, or the contact form below — our team will get back to you promptly.
+                            email, or the contact form below our team will get back to you promptly.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-white text-black px-8 py-4 font-semibold hover:bg-gray-100 transition-all min-w-[300px] duration-300 transform hover:scale-105">
+                        <div data-aos="fade-up" className="flex flex-col sm:flex-row gap-4">
+                            <Link to={"/Services"} className="bg-white text-black px-8 py-4 font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
                                 Our Services
-                            </button>
+                            </Link>
 
                         </div>
                     </div>
 
                     {/* Right Visual */}
                     <div className="relative animate-slide-up">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
+                        <div data-aos="fade-left" className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
                             {/* Contact Form (VIP) */}
                             <form
                                 className="flex flex-col gap-6"

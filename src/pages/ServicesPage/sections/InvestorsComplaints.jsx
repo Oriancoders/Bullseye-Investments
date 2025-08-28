@@ -1,4 +1,5 @@
 import { Mail, Phone } from "lucide-react";
+import AOSInitializer from "../../../utils/AOS/AOSInitializer";
 
 function InvestorComplaints() {
   const contacts = [
@@ -18,13 +19,15 @@ function InvestorComplaints() {
 
   return (
     <section className="py-16 bg-white">
+      <AOSInitializer/>
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl lg:text-5xl font-bold  mb-6 text-center">
+        <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold  mb-6 text-center">
           Investor Complaints
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {contacts.map((person, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className="relative p-6 rounded-2xl bg-white border-2 border-black  "
             >
@@ -38,9 +41,9 @@ function InvestorComplaints() {
                 <Mail size={18} className="text-gray-700" />
                 <span className="text-gray-800">{person.email}</span>
               </div>
-              <button className="px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800 transition">
+              <a href={`tel:${person.phone}`}  className="px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800 transition">
                 Contact Now
-              </button>
+              </a>
             </div>
           ))}
         </div>

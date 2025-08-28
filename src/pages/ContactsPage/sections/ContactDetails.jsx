@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Globe } from 'lucide-react';
+import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 
 const ContactDetails = () => {
   const contacts = [
@@ -22,19 +23,20 @@ const ContactDetails = () => {
 
   return (
     <section className="py-20 bg-gray-50">
+      <AOSInitializer/>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Contact Details
           </h2>
-          <p className="text-xl text-gray-600">
+          <p data-aos="fade-up" className="text-xl text-gray-600">
             Get in touch with our professional team
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div  className="space-y-6">
           {contacts.map((contact, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div data-aos="fade-up" key={index} className="bg-white rounded-lg shadow-sm p-6 transition-all duration-300 ">
               <div className="flex sm:flex-row flex-col sm:items-center sm:justify-between gap-4">
                 <div className="flex sm:flex-row flex-col sm:items-center gap-4">
                   <div className={`w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4`}>

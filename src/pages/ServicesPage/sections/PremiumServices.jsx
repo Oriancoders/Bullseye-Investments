@@ -3,16 +3,9 @@ import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BarChart3, Landmark, ShieldCheck, Smartphone, UserCheck } from "lucide-react";
 import { useGlobalContext } from "../../../GlobalStates/GlobalState";
+import ACCOUNTURL from "../../../utils/data/ACCOUNTURL";
+import AOSInitializer from "../../../utils/AOS/AOSInitializer";
 
-/**
- * Premium Services Section
- * - Black & white theme with subtle gold accents
- * - Alternating full-width blocks, image parallax and cinematic reveal
- * - Each block shows a detailed breakdown and a "Read More" modal
- * - Uses whileInView + useScroll (per-block) for smooth animations (no jank)
- *
- * NOTE: Replace unsplash image URLs with your actual assets later.
- */
 
 
 const services = [
@@ -65,23 +58,19 @@ const services = [
 
 
 
-/* Styling notes:
- - Black background for page, white text
- - Gold for subtle accents (I use inline gradient & border)
- - Primary CTA uses green to reflect 'growth' (per your prior idea)
-*/
 
 export default function PremiumServices() {
   const [modal, setModal] = useState({ open: false, idx: null });
 
   return (
     <section id="services" className="bg-black text-white">
+      <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-white mb-6">
             What We Offer
           </h2>
-          <p className="mt-3 text-slate-300 max-w-2xl mx-auto">
+          <p data-aos="fade-up" className="mt-3 text-slate-300 max-w-2xl mx-auto">
             Premium, transparent financial services tailored to protect and grow
             your investments. Scroll to explore each offering in detail.
           </p>
@@ -115,7 +104,8 @@ export default function PremiumServices() {
             <p className="text-slate-200 mb-4">{services[modal.idx].long}</p>
             <div className="flex gap-3">
               <a
-                href="#open-account"
+                href= {ACCOUNTURL}
+              target="_blank"
                 className="inline-block bg-green-600 hover:bg-green-700 px-5 py-2 rounded-md text-white font-semibold"
               >
                 Open Free Account
@@ -158,9 +148,11 @@ function ServiceBlock({ service, index, onReadMore }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
       key={index}
+      data-aos="fade-up"
     >
       {/* IMAGE */}
       <div
+        
         className={`w-full rounded-2xl overflow-hidden shadow-xl ${(index % 2 == 0 && scrwidth > 1024) && 'order-2'} `}
       >
         <motion.img
@@ -216,7 +208,8 @@ function ServiceBlock({ service, index, onReadMore }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="#open-account"
+              href= {ACCOUNTURL}
+              target="_blank"
               className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white sm:px-4 px-2 py-2 rounded-md font-semibold"
             >
               Open Free Account

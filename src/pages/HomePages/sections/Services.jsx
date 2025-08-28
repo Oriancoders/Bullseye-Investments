@@ -59,7 +59,7 @@ const Services = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: index * 0.4 , ease : 'easeInOut'}}
               viewport={{ once: true }}
-              key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:-translate-y-2">
+              key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
 
               <h3 className="text-2xl font-bold text-black mb-4">{service.title}</h3>
               <p className=" leading-relaxed">{service.description}</p>
