@@ -1,13 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Coins, Award, TrendingUp, ExternalLink } from 'lucide-react';
 
+const commodityList = [
+  { name: 'Gold', symbol: 'GOLD' },
+  { name: 'Palladium', symbol: 'XPD' },
+  { name: 'Silver', symbol: 'XAG' },
+  { name: 'Platinum', symbol: 'XPT' },
+
+];
+
 const PMEXSection = () => {
-  const commodities = [
-    { name: 'Gold', symbol: 'GOLD', price: '$2,045.30', change: '+1.2%', trend: 'up' },
-    { name: 'Crude Oil', symbol: 'CRUDE', price: '$78.45', change: '+0.8%', trend: 'up' },
-    { name: 'Silver', symbol: 'SILVER', price: '$24.67', change: '-0.3%', trend: 'down' },
-    { name: 'Copper', symbol: 'COPPER', price: '$8,234', change: '+2.1%', trend: 'up' }
-  ];
+  const [commodities, setCommodities] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let interval;
+    const fetchCommodities = async () => {
+      setLoading(true);
+      try {
+        const results = await Promise.all(
+          commodityList.map(async (c) => {
+            const res = await fetch(
+              `https://corsproxy.io/?https://beta-restapi.sarmaaya.pk/api/commodities/price/${c.symbol}?days=2`
+            );
+            const data = await res.json();
+            const prices = data.response;
+            if (!Array.isArray(prices) || prices.length === 0) return null;
+            // Get latest and previous price for change calculation
+            const latest = prices[prices.length - 1];
+            const prev = prices.length > 1 ? prices[prices.length - 2] : latest;
+            const change = latest.price - prev.price;
+            const changePercent = prev.price ? ((change / prev.price) * 100) : 0;
+            return {
+              name: c.name,
+              symbol: c.symbol,
+              price: latest.price,
+              change,
+              changePercent,
+              trend: change >= 0 ? 'up' : 'down'
+            };
+          })
+        );
+        setCommodities(results.filter(Boolean));
+      } catch (err) {
+        setCommodities([]);
+      }
+      setLoading(false);
+    };
+    fetchCommodities();
+    interval = setInterval(fetchCommodities, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="PMEX" className="py-20 bg-white">
@@ -79,21 +122,32 @@ const PMEXSection = () => {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h3 className="text-2xl font-bold text-black mb-8">Live Commodities Prices</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {commodities.map((commodity, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h4 className="font-bold text-black">{commodity.name}</h4>
-                    <div className="text-sm text-gray-600">{commodity.symbol}</div>
+            {loading ? (
+              <div className="col-span-4 text-center text-gray-400">Loading...</div>
+            ) : (
+              commodities.map((commodity, index) => (
+                <div key={index} className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h4 className="font-bold text-black">{commodity.name}</h4>
+                      <div className="text-sm text-gray-600">{commodity.symbol}</div>
+                    </div>
+                    <div className={`flex items-center ${commodity.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+                      <TrendingUp className={`w-4 h-4 mr-1 ${commodity.trend === 'down' ? 'rotate-180' : ''}`} />
+                      <span className="text-sm font-semibold">
+                        {commodity.change >= 0 ? '+' : ''}
+                        {commodity.change.toLocaleString(undefined, { maximumFractionDigits: 0 })} (
+                        {commodity.changePercent >= 0 ? '+' : ''}
+                        {commodity.changePercent.toFixed(2)}%)
+                      </span>
+                    </div>
                   </div>
-                  <div className={`flex items-center ${commodity.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
-                    <TrendingUp className={`w-4 h-4 mr-1 ${commodity.trend === 'down' ? 'rotate-180' : ''}`} />
-                    <span className="text-sm font-semibold">{commodity.change}</span>
+                  <div className="text-2xl font-bold text-black">
+                    PKR {commodity.price.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                   </div>
                 </div>
-                <div className="text-2xl font-bold text-black">{commodity.price}</div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
 
