@@ -93,7 +93,13 @@ const Markets = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="">Highlight:</span>
-                  <span className="text-black font-bold">{index == 0 ? psx.change + " (" + psx.changePercentage + "%)" : market.highlight}</span>
+                  <span className="text-black font-bold">
+                    {index === 0
+                      ? psx
+                        ? `${psx.change} (${psx.changePercentage}%)`
+                        : 'Loading...'
+                      : market.highlight}
+                  </span>
                 </div>
               </div>
             </div>
