@@ -42,40 +42,8 @@ const ContactLocation = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 gap-10">
 
-
-          {/* Map Placeholder - Quick Location Recognition */}
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3 , ease : 'easeInOut'}}
-              viewport={{ once: true }} className="h-fit bg-gray-50 rounded-lg overflow-hidden  flex  flex-col    relative">
-
-            <div className="relative  w-full h-0 pb-[70%] overflow-hidden rounded-lg">
- 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.193312546269!2d67.3072514!3d25.027512899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb34b041c38af57%3A0x1d07ef7dc92ce768!2sHead%20Office%20Bahria%20Town%20Karachi.!5e0!3m2!1sen!2suk!4v1756386744017!5m2!1sen!2suk"
-                className="absolute top-0 left-0 w-full h-full border-0"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map"
-              ></iframe>
-            </div>
-
-
-            <div  className="flex items-start  z-20 w-full p-5">
-              <div>
-                <h4 className="text-xl font-bold mb-3">Head Office</h4>
-                <p className=" leading-relaxed">
-                  Office 101 Al Zara Tower Building <br />
-                  198 Midway commercial B , <br />
-                  Bahria Town Karachi
-                </p>
-              </div>
-            </div>
-          </motion.div>
 
           <motion.div initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -95,7 +63,7 @@ const ContactLocation = () => {
             </div>
             <div className="flex items-start   z-20 w-full p-5">
               <div>
-                <h4 className="text-xl font-bold mb-3">Coperate Office</h4>
+                <h4 className="text-xl font-bold mb-3">Registered Office</h4>
                 <p className=" leading-relaxed">
                   1304, 13th floor Balad Trade Center 3<br />
                   Boat Basin Clifton Block 7<br />
@@ -107,7 +75,7 @@ const ContactLocation = () => {
         </div>
 
         {/* Contact Methods - Law of Proximity */}
-        <div className=" grid md:grid-cols-3 grid-cols-1 mt-6">
+        <div className=" flex lg:flex-row flex-col justify-between mt-6">
 
           {contactMethods.map((method, index) => (
             <motion.div 
@@ -116,7 +84,7 @@ const ContactLocation = () => {
               transition={{ duration: 0.3, delay: index * 0.4 , ease : 'easeInOut'}}
               viewport={{ once: true }}
             key={index} className=" bg-gray-50 rounded-lg p-6  transform ">
-              <div className="flex md:items-center sm:flex-row flex-col gap-4">
+              <div className="flex md:items-center sm:flex-row flex-col gap-2">
                 <div className={`w-12 h-12 bg-gradient-to-r from-black to-black/80 rounded-full flex items-center justify-center mr-4  `}>
                   {method.icon}
                 </div>

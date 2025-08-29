@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { TrendingUp, TrendingDown, BarChart3, DollarSign, Coins } from 'lucide-react';
-
+import logos from '../../../utils/data/logos'
 const API_URL = 'https://corsproxy.io/?https://beta-restapi.sarmaaya.pk/api/dashboard/market-view';
 
 const MarketSnapshot = () => {
   const [psx, setPsx] = useState(null);
+  
 
   // Fetch PSX data
   useEffect(() => {
@@ -45,11 +46,11 @@ const MarketSnapshot = () => {
   const markets = [
     // PSX will be replaced below
     {
-      icon: Coins,
+      icon: logos.pmex,
       name: 'PMEX',
       fullName: 'Pakistan Mercantile Exchange',
       description: 'Commodities and futures contracts',
-      value: '$2,045.30',
+      value: '2,045.30',
       change: '+1.2%',
       trend: 'up',
       color: 'from-yellow-500 to-orange-500'
@@ -114,8 +115,12 @@ const MarketSnapshot = () => {
           {/* Other static/dynamic market cards */}
           {markets.map((market, index) => (
             <div key={index} className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className={`w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <market.icon className="w-8 h-8 text-white" />
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`} style={{
+                backgroundImage : `url(${market.icon})`,
+                backgroundSize : 'cover',
+                backgroundPosition : 'center'
+              }}>
+                
               </div>
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-black mb-2">{market.name}</h3>

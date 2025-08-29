@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrendingUp, BarChart3 } from 'lucide-react';
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
 
 const MarketsHero = () => {
   const scrollToSection = (id) => {
@@ -44,9 +45,9 @@ const MarketsHero = () => {
               <TrendingUp className="w-5 h-5 inline-block mr-2" />
               Explore Markets
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+            <a href={ACCOUNTURL} target='_blank' className="border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[200px]">
               Open Account
-            </button>
+            </a >
           </div>
 
           {/* Market Stats */}

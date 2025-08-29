@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOSInitializer from '../../../utils/AOS/AOSInitializer';
+const API_URL = 'https://corsproxy.io/?https://beta-restapi.sarmaaya.pk/api/dashboard/market-view';
 
 const Markets = () => {
+  
+  const [psx, setPsx] = useState(null);
+    
+  
+    // Fetch PSX data
+    useEffect(() => {
+      let interval;
+      const fetchPSX = async () => {
+        try {
+          const res = await fetch(API_URL);
+          const data = await res.json();
+          // Find KSE100 index (PSX)
+          console.log("psx ",data.response);
+          
+          
+          setPsx(data.response[0]);
+        } catch (err) {
+          setPsx(null);
+        }
+      };
+      console.log(psx)
+      
+      fetchPSX();
+
+      interval = setInterval(fetchPSX, 60000); // 1 min
+  
+      return () => clearInterval(interval);
+    }, []);
+
   const markets = [
     {
       image : 'https://dps.psx.com.pk/static/images/logo-200.png',
@@ -16,7 +46,7 @@ const Markets = () => {
       name: 'PMEX',
       fullName: 'Pakistan Mercantile Exchange',
       status: 'Active Session',
-      highlight: 'Gold: $2,045/oz'
+      highlight: 'Gold: 2,045/oz'
     },
 
   ];
@@ -63,7 +93,7 @@ const Markets = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="">Highlight:</span>
-                  <span className="text-black font-bold">{market.highlight}</span>
+                  <span className="text-black font-bold">{index == 0 ? psx.change + " (" + psx.changePercentage + "%)" : market.highlight}</span>
                 </div>
               </div>
             </div>

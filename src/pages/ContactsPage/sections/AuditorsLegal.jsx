@@ -7,7 +7,7 @@ const AuditorsLegal = () => {
     {
       icon: FileText,
       category: 'Auditors',
-      name: 'XYZ Chartered Accountants',
+      name: 'Abdul Rahman & Company Chartered Accountants',
       description: 'Independent financial audit and assurance services'
     },
     {

@@ -10,12 +10,7 @@ const AddressSection = () => {
       address: '1304, 13th Floor, Balad Trade Center 3, Boat Basin, Clifton Block 7 – Karachi',
       highlight: true
     },
-    {
-      type: 'Head Office',
-      icon: MapPin,
-      address: 'Office 101, Al Zara Tower, Building 198, Midway Commercial B, Bahria Town Karachi',
-      highlight: false
-    }
+
   ];
 
   return (
@@ -31,7 +26,7 @@ const AddressSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1  gap-8">
           {offices.map((office, index) => (
             <div 
               key={index} 

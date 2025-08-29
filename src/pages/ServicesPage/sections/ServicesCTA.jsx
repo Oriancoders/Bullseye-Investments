@@ -38,7 +38,7 @@ const ServicesCTA = () => {
             <span>•</span>
             <span className="font-semibold">PMEX Member</span>
             <span>•</span>
-            <span className="font-semibold">30+ Years Experience</span>
+            <span className="font-semibold">PSX Applied</span>
           </div>
         </div>
       </div>
