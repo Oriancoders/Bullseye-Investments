@@ -14,7 +14,7 @@ const ContactDetails = () => {
     {
       icon: Mail,
       dial : 'Go to gmail',
-      value: 'bullseyeinvestments25@gmail.com',
+      value: 'bullseyeinvestments2025@gmail.com',
       action: 'https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRpccrJbWxqWJqgHsHGGnJnvzDNtBxJlGwlQqqgsClbnVfqfSddVHGhPTWklmGJTgdGxZxv',
       color: 'from-green-500 to-green-600'
     },

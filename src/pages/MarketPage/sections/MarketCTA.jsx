@@ -1,5 +1,7 @@
 import React from 'react';
-import { ExternalLink, UserPlus } from 'lucide-react';
+import { Contact, ExternalLink, UserPlus } from 'lucide-react';
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
+import { Link } from 'react-router-dom';
 
 const MarketCTA = () => {
   return (
@@ -15,15 +17,15 @@ const MarketCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button className="group bg-white text-black px-12 py-6 text-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px] flex items-center justify-center">
+          <a href={ACCOUNTURL} target='_blank' className="group bg-white text-black px-12 py-6 text-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px] flex items-center justify-center">
             <UserPlus className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
             Open Trading Account
-          </button>
+          </a>
           
-          <button className="border-3 border-white text-white px-12 py-6 text-xl font-bold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[280px] flex items-center justify-center">
-            <ExternalLink className="w-6 h-6 mr-3" />
-            Visit Trading Portals
-          </button>
+          <Link to={"/Contact"} className="border-3 border-white text-white px-12 py-6 text-xl font-bold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[280px] flex items-center justify-center">
+            <Contact className="w-6 h-6 mr-3" />
+            Contact Bullseye
+          </Link >
         </div>
         
         <div className="mt-12 ">
@@ -33,7 +35,7 @@ const MarketCTA = () => {
             <span>•</span>
             <span className="font-semibold">PMEX Member</span>
             <span>•</span>
-            <span className="font-semibold">30+ Years Experience</span>
+            <span className="font-semibold">PSX Applied</span>
           </div>
         </div>
       </div>

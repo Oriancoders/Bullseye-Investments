@@ -1,6 +1,6 @@
 import React from 'react';
 import { TrendingUp, Shield } from 'lucide-react';
-import heroBG from '../../..//assets/heroBG.jpg'
+import bgHero from '../../../assets/bgHero.mp4'
 import { motion } from 'framer-motion';
 import { fadeInUp } from '../../../utils/animations';
 import { Link } from 'react-router-dom';
@@ -11,15 +11,21 @@ const Hero = () => {
     <section className=" bg-gradient-to-br from-black via-gray-900 to-black relative ">
       {/* Background Pattern */}
 
-      <div
-        className="absolute w-full h-full top-0 left-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBG})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          // filter: 'blur(8px)',
-        }}
-      ></div>
+      <div className="absolute w-full h-full top-0 left-0 z-0 overflow-hidden">
+        <video
+          className="w-full h-full object-cover"
+          src={bgHero} 
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+
+      <div className="absolute w-full h-full top-0 left-0 z-10 bg-black/50 backdrop-blur-sm overflow-hidden">
+
+      </div>
+
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
         <div className="sm:text-center">
@@ -71,7 +77,7 @@ const Hero = () => {
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.2 , delay : 0.2}}
+              transition={{ duration: 0.2, delay: 0.2 }}
               viewport={{ once: true, amount: 0.2 }}
               className="text-center">
               <div className=" text-3xl font-bold text-white mb-2">2025</div>
@@ -81,7 +87,7 @@ const Hero = () => {
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.2 , delay : 0.5}}
+              transition={{ duration: 0.2, delay: 0.5 }}
               viewport={{ once: true, amount: 0.2 }}
               className="text-center">
               <div className=" text-3xl font-bold text-white mb-2">100%</div>
@@ -91,7 +97,7 @@ const Hero = () => {
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.2 , delay : 1}}
+              transition={{ duration: 0.2, delay: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               className="text-center">
               <div className=" text-3xl font-bold text-white mb-2">Global</div>

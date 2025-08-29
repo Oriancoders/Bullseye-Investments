@@ -23,7 +23,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black  via-black to-black/80 min-h-screen">
+    <section className="py-20 bg-gradient-to-br from-black  via-black to-black/80 ">
       <AOSInitializer/>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">

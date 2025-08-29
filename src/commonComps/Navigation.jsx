@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logoblack from '../assets/logoblack.png';
 import whitelogo from '../assets/whitelogo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../GlobalStates/GlobalState';
 import { motion } from 'framer-motion';
 import ACCOUNTURL from '../utils/data/ACCOUNTURL';
@@ -10,8 +10,8 @@ import ACCOUNTURL from '../utils/data/ACCOUNTURL';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState('home');
   const { scrwidth } = useGlobalContext();
+  const location = useLocation(); // ✅ detect current path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,14 +52,13 @@ const Navigation = () => {
               <div key={item.label} className="relative group">
                 <Link
                   to={item.href}
-                  onClick={() => setActivePage(item.href)}
                   className={`
                     transition-colors duration-200 font-medium relative 
                     after:content-[''] after:absolute after:left-0 after:-bottom-1 
                     after:w-full after:h-[2px] 
                     after:transition-all after:duration-300 
                     ${isScrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:text-white'} 
-                    ${activePage === item.href
+                    ${location.pathname === item.href
                       ? 'after:bg-current after:opacity-100'
                       : 'after:bg-current after:opacity-0 group-hover:after:opacity-100'}
                   `}
@@ -107,11 +106,11 @@ const Navigation = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  onClick={() => {
-                    setActivePage(item.href);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`
+                    text-gray-700 hover:text-black transition-colors py-2 border-b border-gray-100 
+                    ${location.pathname === item.href ? 'font-bold underline' : ''}
+                  `}
                 >
                   {item.label}
                 </Link>

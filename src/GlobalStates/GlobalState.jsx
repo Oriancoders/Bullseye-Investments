@@ -35,6 +35,7 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             scrwidth,
+            activePage , setActivePage
         }}>
             {children}
         </GlobalContext.Provider>

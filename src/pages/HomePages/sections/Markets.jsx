@@ -47,7 +47,7 @@ const Markets = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {markets.map((market, index) => (
-            <div data-aos = {index == 0 ?  'fade-right' : 'fade-left' } key={index} className="bg-gray-gra p-8  transition-all duration-300 group  hover:-translate-y-2 border-4 rounded-md bg-white">
+            <div data-aos = {index == 0 ?  'fade-right' : 'fade-left' } key={index} className=" p-8  transition-all duration-300 group  hover:-translate-y-2 border-4 rounded-md bg-white">
               <div className="flex items-center mb-6 gap-2 text-black">
                   <img src={market.image} className="w-16 h-16 text-white " />
                 <div>
