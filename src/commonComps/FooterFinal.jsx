@@ -1,6 +1,6 @@
 import React from 'react'
 import AOSInitializer from '../utils/AOS/AOSInitializer'
-import { Facebook, Linkedin, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Linkedin, MessageCircle, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import whitelogo from '../assets/whitelogo.png'
 import { Link } from 'react-router-dom';
 const FooterFinal = () => {
@@ -23,9 +23,10 @@ const FooterFinal = () => {
     ];
 
     const socialLinks = [
-        { icon: Linkedin, label: 'LinkedIn' },
-        { icon: Facebook, label: 'Facebook' },
-        { icon: MessageCircle, label: 'WhatsApp' }
+        { icon: Linkedin, label: 'LinkedIn' , href: 'https://www.linkedin.com/' },
+        { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/BullseyeInvestments/' },
+        { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/' },
+        { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/bullseye.investment/' }
     ];
     return (
         <footer className='bg-black text-white pt-8'>
@@ -39,7 +40,7 @@ const FooterFinal = () => {
                     </p>
                     <div className="flex space-x-4">
                         {socialLinks.map((social, index) => (
-                            <a data-aos="fade-up" key={index} href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black transition-all duration-200">
+                            <a data-aos="fade-up" key={index} href={social.href} className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black transition-all duration-200">
                                 <social.icon className="w-5 h-5" />
                             </a>
                         ))}
