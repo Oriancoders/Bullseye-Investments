@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 const ContactHero = () => {
     const [isSending, setIsSending] = useState(false);
+    const [responseMsg, setResponseMsg] = useState({ type: '', text: '' });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSending(true);
+        setResponseMsg({ type: '', text: '' }); // reset message
         try {
             const form = e.target;
             const first = form.first_name?.value?.trim() || '';
@@ -18,60 +20,88 @@ const ContactHero = () => {
 
             const data = {
                 fullName,
-                email: '', // optional: add an email input if your script requires it
+                email: '', // optional: add email input if required
                 phone,
                 message,
             };
 
-            await fetch('https://script.google.com/macros/s/AKfycbxD3NnaHlP7GumDb8lzYXPbfOuLKSCPaZCKEmEyBJ1hK6IdfYhA-nCSCYdUp5w5IlwglA/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
+            await fetch(
+                'https://script.google.com/macros/s/AKfycbxD3NnaHlP7GumDb8lzYXPbfOuLKSCPaZCKEmEyBJ1hK6IdfYhA-nCSCYdUp5w5IlwglA/exec',
+                {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
 
-            alert('Message sent successfully ✅');
+            setResponseMsg({
+                type: 'success',
+                text: 'Thank you for submitting. Our team will contact you soon ✅',
+            });
             form.reset();
         } catch (err) {
             console.error(err);
-            alert('Failed to send message ❌');
+            setResponseMsg({
+                type: 'error',
+                text: 'Failed to send message ❌ Please try again later.',
+            });
         } finally {
             setIsSending(false);
         }
     };
 
     return (
-        <section id='contactHero' className=" bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10">
-            <AOSInitializer/>
+        <section
+            id="contactHero"
+            className="bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden sm:pt-20 pt-10"
+        >
+            <AOSInitializer />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className="animate-fade-in">
-
-                        <h1 data-aos="fade-right" className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        <h1
+                            data-aos="fade-right"
+                            className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+                        >
                             Get in Touch With
-                            <span className="block text-gray-200">Bullseye Insurance Broker Pvt. Ltd.</span>
+                            <span className="block text-gray-200">
+                                Bullseye Insurance Broker Pvt. Ltd.
+                            </span>
                         </h1>
 
-                        <p data-aos="fade-right" className="text-xl text-gray-100 mb-8 leading-relaxed">
+                        <p
+                            data-aos="fade-right"
+                            className="text-xl text-gray-100 mb-8 leading-relaxed"
+                        >
                             We’re here to answer your queries, assist with investor complaints,
                             and guide you through our compliance policies. Reach out via phone,
-                            email, or the contact form below our team will get back to you promptly.
+                            email, or the contact form below our team will get back to you
+                            promptly.
                         </p>
-                        <div data-aos="fade-up" className="flex flex-col sm:flex-row gap-4">
-                            <Link to={"/Services"} className="bg-white text-black px-8 py-4 font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                        <div
+                            data-aos="fade-up"
+                            className="flex flex-col sm:flex-row gap-4"
+                        >
+                            <Link
+                                to={'/Services'}
+                                className="bg-white text-black px-8 py-4 font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                            >
                                 Our Services
                             </Link>
-
                         </div>
                     </div>
 
                     {/* Right Visual */}
                     <div className="relative animate-slide-up">
-                        <div data-aos="fade-left" className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white ">
+                        <div
+                            data-aos="fade-left"
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl sm:p-8 p-4 border border-white/20 text-white "
+                        >
                             {/* Contact Form (Google Sheet) */}
                             <form
                                 className="flex flex-col gap-6"
@@ -113,6 +143,19 @@ const ContactHero = () => {
                                     className="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:ring-2 focus:ring-white/60 outline-none transition-all resize-none"
                                 />
 
+                                {/* Response Message */}
+                                {responseMsg.text && (
+                                    <p
+                                        className={`text-sm font-medium ${
+                                            responseMsg.type === 'success'
+                                                ? 'text-green-400'
+                                                : 'text-red-400'
+                                        }`}
+                                    >
+                                        {responseMsg.text}
+                                    </p>
+                                )}
+
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
@@ -122,8 +165,6 @@ const ContactHero = () => {
                                     {isSending ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
-
-
                         </div>
                     </div>
                 </div>

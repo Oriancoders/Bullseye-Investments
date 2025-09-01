@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart3, Clock, TrendingUp, TrendingDown, ExternalLink, Activity } from 'lucide-react';
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
 
 const API_URL = 'https://corsproxy.io/?https://beta-restapi.sarmaaya.pk/api/dashboard/market-view';
 const BASE_PERFORMERS = 'https://corsproxy.io/?https://beta-restapi.sarmaaya.pk/api/dashboard/stock-performers?type=';
@@ -201,7 +202,7 @@ const PSXSection = () => {
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <Clock className="w-8 h-8 text-black mx-auto mb-4" />
               <h4 className="font-bold text-black mb-2">Market Hours</h4>
-              <p className="text-gray-600 text-sm">Monday - Friday<br />9:15 AM - 3:30 PM</p>
+              <p className="text-gray-600 text-sm">24/7</p>
             </div>
             <div className="text-center p-6 bg-gray-50 rounded-lg">
               <BarChart3 className="w-8 h-8 text-black mx-auto mb-4" />
@@ -217,9 +218,9 @@ const PSXSection = () => {
         </div>
         {/* CTA */}
         <div className="text-center flex sm:flex-row flex-col gap-4 items-center justify-center w-full">
-          <button className="border-2 border-black bg-black text-white px-8 py-4 font-semibold transition-all duration-200 transform hover:scale-105 ">
+          <a href={ACCOUNTURL} target='_blank' className="border-2 border-black bg-black text-white px-8 py-4 font-semibold transition-all duration-200 transform hover:scale-105 ">
             Start PSX Trading
-          </button>
+          </a>
           <a href='https://dps.psx.com.pk/' target='_blank' rel="noopener noreferrer" className="border-2 border-black text-black px-8 py-4 font-semibold hover:bg-black hover:text-white transition-all duration-200">
             Visit PSX Portal
           </a>

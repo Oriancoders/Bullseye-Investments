@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Coins, Award, TrendingUp, ExternalLink } from 'lucide-react';
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
 
 const commodityList = [
   { name: 'Gold', symbol: 'GOLD' },
@@ -177,9 +178,9 @@ const PMEXSection = () => {
 
         {/* CTA */}
         <div className=" text-center flex sm:flex-row flex-col gap-4 items-center justify-center w-full">
-          <button className="border-2 border-black bg-black text-white px-8 py-4 font-semibold transition-all duration-200 transform hover:scale-105 ">
+          <a href={ACCOUNTURL} target='_blank'  className="border-2 border-black bg-black text-white px-8 py-4 font-semibold transition-all duration-200 transform hover:scale-105 ">
             Start Commodities Trading
-          </button>
+          </a>
           <a href='https://mportal.pmex.com.pk/' target='_blank' className="border-2 border-black text-black px-8 py-4 font-semibold hover:bg-black hover:text-white transition-all duration-200">
             Visit PMEX Portal
           </a>

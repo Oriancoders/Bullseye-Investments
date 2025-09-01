@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Phone, Mail, AlertCircle } from 'lucide-react';
+import { User, Phone, Mail, AlertCircle, Building } from 'lucide-react';
 import AOSInitializer from '../../../utils/AOS/AOSInitializer';
 import { motion } from 'framer-motion';
 const InvestorComplaints = () => {
@@ -85,8 +85,20 @@ const InvestorComplaints = () => {
                     <div className="text-gray-600">Bullseyeinvestment2025@gmail.com</div>
                   </div>
                 </div>
+
+                <div className=" col-span-2 w-full space-y-2">
+                  <div  className='flex items-center justify-center'>
+                    <Building className="w-6 h-6  mr-3 " />
+                    <div className="font-semibold text-black">Registered Office</div>
+                  </div>
+                    <div className="text-gray-600">1304, 13th Floor,  Balad Trade Center 3, Boat Basin, Clifton Block 7  Karachi</div>
+                </div>
               </div>
-              
+               {/* type: 'Registered Office',
+      icon: Building,
+      address: '1304, 13th Floor, Balad Trade Center 3, Boat Basin, Clifton Block 7 – Karachi',
+      highlight: true
+               */}
               <button onClick={() => scrollToSection("contactHero")} className="bg-black text-white px-12 py-4 text-lg font-bold rounded-lg hover:shadow-2xl hover:from-red-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105">
                 Contact Now
               </button>

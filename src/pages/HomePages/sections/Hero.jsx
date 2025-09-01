@@ -57,7 +57,7 @@ const Hero = () => {
             initial="hidden"   // 👈 start from hidden
             animate="visible"
             className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
-            30+ years of international expertise in commodities, stocks, insurance, forex, and real estate.
+            international expertise in commodities, stocks, insurance, forex, and real estate.
             Your trusted partner for comprehensive financial solutions.
           </motion.p>
 

@@ -1,11 +1,12 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const data = [
-  { name: "Ms. Fainaana Farnaam", value: 51, color: "#2563eb" }, // Blue
-  { name: "Ms. Husana Siddiqui", value: 25, color: "#f97316" }, // Orange
-  { name: "Mr. Sajid Ahmed Qureshi", value: 23, color: "#10b981" }, // Green
+  { name: "Ms. Fainaana Farnaam", value: 51, color: "#2563eb" },
+  { name: "Ms. Husana Siddiqui", value: 25, color: "#f97316" },
+  { name: "Mr. Sajid Ahmed Qureshi", value: 23, color: "#10b981" },
 ];
 
 const sponsors = [
@@ -15,12 +16,14 @@ const sponsors = [
 ];
 
 function SponsorsSection() {
+  const chartRef = useRef(null);
+  const isInView = useInView(chartRef, { once: true, margin: "-50px" }); 
+  // `once: true` means load only first time it enters viewport
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-200 via-gray-100 to-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
-
-
         <div className="text-center mb-8">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Sponsors & Shareholding Pattern
@@ -28,37 +31,38 @@ function SponsorsSection() {
         </div>
 
         {/* Content Grid */}
-        <div load="lazy" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left → Donut Chart */}
           <motion.div
+            ref={chartRef}
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className=" "
+            className=""
           >
-
-            <ResponsiveContainer  width="100%" height={280}>
-              <PieChart>
-                <Pie
-                  data={data}
-                  dataKey="value"
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={70}
-                  outerRadius={110}
-                  paddingAngle={4}
-                  animationDuration={1200}
-                >
-                  {data.map((entry, idx) => (
-                    <Cell key={idx} fill={entry.color} />
-                  ))}
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
+            {isInView && (
+              <ResponsiveContainer width="100%" height={280}>
+                <PieChart>
+                  <Pie
+                    data={data}
+                    dataKey="value"
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={70}
+                    outerRadius={110}
+                    paddingAngle={4}
+                    animationDuration={1200}
+                  >
+                    {data.map((entry, idx) => (
+                      <Cell key={idx} fill={entry.color} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            )}
 
             {/* Legend */}
-            <div className="mt-6 space-y-2 ">
+            <div className="mt-6 space-y-2">
               {data.map((d, i) => (
                 <div key={i} className="flex justify-center items-center gap-3">
                   <span
@@ -105,4 +109,4 @@ function SponsorsSection() {
   );
 }
 
-export default SponsorsSection
+export default SponsorsSection;

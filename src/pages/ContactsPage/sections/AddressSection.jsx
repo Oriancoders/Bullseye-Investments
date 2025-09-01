@@ -30,8 +30,7 @@ const AddressSection = () => {
           {offices.map((office, index) => (
             <div 
               key={index} 
-              data-aos={index == 0 ? 'fade-right' : 'fade-left'}
-              className={`p-8 rounded-lg bg-black text-white transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 `}
+              className={`p-8 rounded-lg bg-white text-black transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2 `}
             >
               <div className="flex items-center mb-6">
                 <div className={`w-12 h-12 bg-white text-black rounded-full flex items-center justify-center mr-4 ${
@@ -46,7 +45,7 @@ const AddressSection = () => {
               
               <div className="flex items-start">
                 
-                <p className={`leading-relaxed text-gray-200 `}>
+                <p className={`leading-relaxed  `}>
                   {office.address}
                 </p>
               </div>

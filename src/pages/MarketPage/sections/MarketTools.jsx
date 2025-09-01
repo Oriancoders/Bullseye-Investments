@@ -32,16 +32,16 @@ const MarketTools = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
-            Tools & Resources
+            Some Resources
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional trading tools and educational resources to enhance your market knowledge
+             educational resources to enhance your market knowledge
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {tools.map((tool, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6">
@@ -54,11 +54,10 @@ const MarketTools = () => {
               </button>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Demo Watchlist */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h3 className="text-2xl font-bold text-black mb-6">Demo Watchlist</h3>
+        <div className="bg-white rounded-lg shadow-md p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-bold text-black mb-4">PSX Favorites</h4>

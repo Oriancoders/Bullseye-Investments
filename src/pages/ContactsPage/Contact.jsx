@@ -22,7 +22,7 @@ const Contact = () => {
         <Navigation />
         <ContactHero />
         {/* <RegisteredAgents /> */}
-        <AddressSection />
+        {/* <AddressSection /> */}
         <ContactDetails />
         <InvestorComplaints />
         <AuditorsLegal />
