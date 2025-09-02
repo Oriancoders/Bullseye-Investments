@@ -46,6 +46,7 @@ const PSXSection = () => {
           fetch(`${BASE_PERFORMERS}active&page=1&limit=4`).then(r => r.json()),
         ]);
         setGainers(Array.isArray(g.response?.data) ? g.response.data : []);
+        // console.log("main gainers set karnay kai baaad ", gainers)
         setLosers(Array.isArray(l.response?.data) ? l.response.data : []);
         setActive(Array.isArray(a.response?.data) ? a.response.data : []);
       } catch (err) {
@@ -59,6 +60,7 @@ const PSXSection = () => {
     interval = setInterval(fetchPerformers, 60000);
     return () => clearInterval(interval);
   }, []);
+
 
   // Card style
   const cardClass = "rounded-xl bg-gradient-to-br from-white to-gray-100 shadow-lg p-6 flex flex-col gap-2 hover:shadow-2xl transition-all duration-300 border border-gray-200";
@@ -79,7 +81,7 @@ const PSXSection = () => {
               Pakistan Stock Exchange (PSX)
             </h2>
             <p className="text-xl text-gray-900 max-w-4xl mx-auto">
-              Pakistan's premier stock exchange offering equity trading, bonds, and derivatives. 
+              Pakistan's premier stock exchange offering equity trading, bonds, and derivatives.
               Home to the KSE-100 index and over 500 listed companies.
             </p>
           </div>
@@ -144,7 +146,7 @@ const PSXSection = () => {
                     <div className={priceClass}>PKR {Number(stock.close).toLocaleString()}</div>
                   </div>
                   <div className={changeClass(stock.change)}>
-                    +{Number(stock.change).toFixed(2)} ({Number(stock.changePercentage).toFixed(2)}%)
+                    +{Number(stock.change).toFixed(2)} ({stock.change_percent}%)
                   </div>
                 </div>
               ))
@@ -166,7 +168,7 @@ const PSXSection = () => {
                     <div className={priceClass}>PKR {Number(stock.close).toLocaleString()}</div>
                   </div>
                   <div className={changeClass(stock.change)}>
-                    {Number(stock.change).toFixed(2)} ({Number(stock.changePercentage).toFixed(2)}%)
+                    {Number(stock.change).toFixed(2)} ({stock.change_percent}%)
                   </div>
                 </div>
               ))

@@ -162,7 +162,7 @@ const TeamCTA = () => {
           <p className="text-xl text-gray-300 mb-8">
             Join thousands of satisfied clients who trust us with their financial future
           </p>
-          <Link to={"/Contact"} className="group bg-white text-black sm:px-12 px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+          <Link to={"/Contact"} className="group bg-white text-black sm:px-12 px-8 py-4 text-lg font-semibold hover:bg-gray-200 transition-all duration-300 transform  inline-flex items-center rounded-sm">
             Join Our Journey
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>

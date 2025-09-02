@@ -16,16 +16,19 @@ const MarketCTA = () => {
           for their PSX, PMEX, and Forex trading needs.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a href={ACCOUNTURL} target='_blank' className="group bg-white text-black px-12 py-6 text-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl min-w-[280px] flex items-center justify-center">
-            <UserPlus className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-            Open Trading Account
-          </a>
-          
-          <Link to={"/Contact"} className="border-3 border-white text-white px-12 py-6 text-xl font-bold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 min-w-[280px] flex items-center justify-center">
-            <Contact className="w-6 h-6 mr-3" />
+   
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center  max-w-2xl mx-auto">
+
+          <Link  data-aos="fade-up" to={"/Contact"} className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-2 flex-1 max-w-[250px] justify-center">
             Contact Bullseye
-          </Link >
+            <Contact className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
+          </Link>
+          
+          <a  data-aos="fade-up" href='tel:02135164519' className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-4 flex-1 max-w-[250px] justify-center">
+             Open Trading Account 
+            <UserPlus className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
+          </a>
         </div>
         
         <div className="mt-12 ">

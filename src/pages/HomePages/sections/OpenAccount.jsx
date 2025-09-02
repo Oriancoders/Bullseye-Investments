@@ -1,7 +1,7 @@
 import React from 'react';
 import {  FileText, MousePointerClick, UserPlus, MailCheck, Award } from 'lucide-react';
 import AOSInitializer from '../../../utils/AOS/AOSInitializer';
-
+import ACCOUNTURL from '../../../utils/data/ACCOUNTURL';
 const OpenAccount = () => {
   const steps = [
     {
@@ -67,10 +67,10 @@ const OpenAccount = () => {
         </div>
 
         <div className="text-center mt-16 space-y-7">
-          <button className="bg-black text-white px-12 py-4 text-lg font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105 ">
+          <a href={ACCOUNTURL} target='_blank'  className="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
             Open Account Now
-          </button>
-          <p className="text-lg  mt-4 bg-green-600 text-white px-6 py-2 rounded-full ">Account opening is free. No hidden charges.</p>
+          </a>
+          <p className="text-lg  mt-9 bg-green-600 text-white px-6 py-2 rounded-full ">Account opening is free. No hidden charges.</p>
         </div>
       </div>
     </section>

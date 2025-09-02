@@ -19,15 +19,16 @@ const ServicesCTA = () => {
         </p>
         
         {/* Primary CTA - Optimized for Fitts's Law & Serial Position Effect */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Link  data-aos="fade-up" to={"/Contact"} className="group bg-black text-white px-8 py-6 text-lg  transition-all duration-300 transform hover:scale-105 shadow-2xl sm:w-[350px] w-full  flex items-center justify-center border-2 border-white   font-semibold hover:bg-white hover:text-black">
-            <Calendar className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-            Book a Free Consultation
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center  max-w-2xl mx-auto">
+
+          <Link  data-aos="fade-up" to={"/Contact"} className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-2 flex-1 max-w-[250px] justify-center">
+            Free Consultation
+            <Calendar className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
           </Link>
           
-          <a  data-aos="fade-up" href='tel:02135164519' className="border-3  text-black px-12 py-6 text-xl font-bold bg-white transition-all duration-300 transform hover:scale-105 sm:w-[350px] w-full flex items-center justify-center ">
-            <Phone className="w-6 h-6 mr-3" />
-            Call Us Now
+          <a  data-aos="fade-up" href='tel:02135164519' className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-4 flex-1 max-w-[250px] justify-center">
+            Call Us Now 
+            <Phone className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
           </a>
         </div>
         

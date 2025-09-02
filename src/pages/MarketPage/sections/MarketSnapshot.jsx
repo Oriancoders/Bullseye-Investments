@@ -15,7 +15,6 @@ const MarketSnapshot = () => {
         const res = await fetch(API_URL);
         const data = await res.json();
         // Find KSE100 index (PSX)
-        console.log(data);
         
         const kse100 = data.response?.find(
           (item) =>
@@ -71,10 +70,12 @@ const MarketSnapshot = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Dynamic PSX Card */}
-          <div className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <BarChart3 className="w-8 h-8 text-white" />
-            </div>
+          <div className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`} style={{
+                backgroundImage : `url(${logos.psx})`,
+                backgroundSize : 'cover',
+                backgroundPosition : 'center'
+              }}/>
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-black mb-2">PSX</h3>
               <div className="text-sm text-gray-600 mb-2">
@@ -114,7 +115,7 @@ const MarketSnapshot = () => {
 
           {/* Other static/dynamic market cards */}
           {markets.map((market, index) => (
-            <div key={index} className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div key={index} className="group bg-white border border-gray-200 rounded-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`} style={{
                 backgroundImage : `url(${market.icon})`,
                 backgroundSize : 'cover',
