@@ -24,7 +24,7 @@ const FooterFinal = () => {
 
     const socialLinks = [
         { icon: Linkedin, label: 'LinkedIn' , href: 'https://www.linkedin.com/' },
-        { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/BullseyeInvestments/' },
+        { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/BullseyeInvestments' },
         { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/' },
         { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/bullseye.investment/' }
     ];

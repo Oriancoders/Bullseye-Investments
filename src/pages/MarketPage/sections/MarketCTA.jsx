@@ -25,7 +25,7 @@ const MarketCTA = () => {
             <Contact className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
           </Link>
           
-          <a  data-aos="fade-up" href='tel:02135164519' className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-4 flex-1 max-w-[250px] justify-center">
+          <a  data-aos="fade-up" href={ACCOUNTURL} target='_blank' className="bg-white text-black px-4 py-4 font-semibold hover:bg-gray-200 transition-all duration-200 transform inline-flex items-center group rounded-sm gap-x-4 flex-1 max-w-[250px] justify-center">
              Open Trading Account 
             <UserPlus className="w-6 h-6 mr-3 group-hover:translate-x-3 transition-all" />
           </a>

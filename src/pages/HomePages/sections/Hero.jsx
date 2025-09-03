@@ -57,8 +57,7 @@ const Hero = () => {
             initial="hidden"   // 👈 start from hidden
             animate="visible"
             className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
-            international expertise in commodities, stocks, insurance, forex, and real estate.
-            Your trusted partner for comprehensive financial solutions.
+            Bullseye Investments is a regulated brokerage helping Pakistanis invest smartly through expert guidance, financial education, and market access.
           </motion.p>
 
           {/* CTA Buttons */}

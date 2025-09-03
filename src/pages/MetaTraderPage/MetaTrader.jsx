@@ -5,7 +5,7 @@ import WhyWithBullseye from "./sections/WhyWithBullseye";
 import Download from "./sections/Download";
 import HowToTrade from "./sections/HowToTrade";
 import Navigation from "../../commonComps/Navigation";
-import Footer from "../../commonComps/Footer";
+import FooterFinal from "../../commonComps/FooterFinal";
 
 export default function MetaTrader() {
   return (
@@ -16,7 +16,7 @@ export default function MetaTrader() {
       <WhyWithBullseye />
       <Download />
       <HowToTrade />
-      <Footer/>
+      <FooterFinal/>
     </div>
   );
 }
